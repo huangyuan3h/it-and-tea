@@ -3,5 +3,8 @@
     "welcome": "zh",
     "description": "zh description",
     "speech": "你好！ 欢迎来到 IT and tea"
+  },
+  "Register": {
+    "welcome": "zh"
   }
 }
