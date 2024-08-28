@@ -3,11 +3,11 @@ import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
+import { useTranslations } from "next-intl";
 import {
   Card,
   CardContent,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
@@ -18,6 +18,7 @@ const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const EmailForm: React.FC = () => {
   const [email, setEmail] = useState<string>("");
   const [isValid, setIsValid] = useState<boolean>(true);
+  const t = useTranslations("Register");
 
   // 处理Email的变化并验证Email格式
   const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -42,17 +43,17 @@ const EmailForm: React.FC = () => {
   };
 
   return (
-    <Card className="w-[480px] h-[320px]">
+    <Card className="w-[480px] h-[340px]">
       <CardHeader>
-        <CardTitle>Register</CardTitle>
-        <CardDescription>onboard to it&tea</CardDescription>
+        <CardTitle>{t("title")}</CardTitle>
+        <CardDescription>{t("onboard")}</CardDescription>
       </CardHeader>
       <CardContent>
         <div className="grid w-full items-center gap-1.5">
-          <Label htmlFor="email">Email</Label>
+          <Label htmlFor="email">{t("email")}</Label>
           <Input
             type="email"
-            placeholder="Enter your email"
+            placeholder={t("registerPlaceholder")}
             value={email}
             onChange={handleEmailChange}
             className={`w-full ${
@@ -64,11 +65,17 @@ const EmailForm: React.FC = () => {
             type="button"
             disabled={!emailRegex.test(email)}
           >
-            Submit
+            {t("submit")}
           </Button>
         </div>
 
         <Separator className="mt-4" />
+        <div className="mt-2">
+          <Label> {t("loginLabel")}</Label>
+          <Button variant="secondary" className="w-full mt-2" type="button">
+            {t("login")}
+          </Button>
+        </div>
       </CardContent>
     </Card>
   );

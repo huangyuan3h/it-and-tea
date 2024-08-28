@@ -5,6 +5,13 @@
     "speech": "Bonjour, bienvenue chez IT and Tea."
   },
   "Register": {
-    "welcome": "fr"
+    "title": "S'inscrire",
+    "onboard": "Inscrivez-vous à IT&TEA",
+
+    "email": "E-mail",
+    "registerPlaceholder": "Entrez votre e-mail",
+    "submit": "Soumettre",
+    "loginLabel": "Vous avez déjà un compte ?",
+    "login": "Connexion"
   }
 }

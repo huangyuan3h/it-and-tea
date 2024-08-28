@@ -5,6 +5,13 @@
     "speech": "你好！ 欢迎来到 IT and tea"
   },
   "Register": {
-    "welcome": "zh"
+    "title": "注册",
+    "onboard": "加入 IT&TEA",
+
+    "email": "电子邮件",
+    "registerPlaceholder": "请输入你的电子邮件",
+    "submit": "提交",
+    "loginLabel": "已经有账号了？",
+    "login": "登录"
   }
 }
