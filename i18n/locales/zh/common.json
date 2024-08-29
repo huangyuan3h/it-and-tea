@@ -10,8 +10,11 @@
 
     "email": "电子邮件",
     "registerPlaceholder": "请输入你的电子邮件",
+    "invalidEmail": "电子邮件无效",
     "submit": "提交",
     "loginLabel": "已经有账号了？",
-    "login": "登录"
+    "login": "登录",
+    "emailAlertTitle": "邮件发送成功",
+    "emailAlertDescription": "一封注册邮件已经发送到了你的邮箱，请点击邀请链接继续！"
   }
 }

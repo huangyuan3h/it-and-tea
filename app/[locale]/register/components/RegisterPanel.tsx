@@ -1,9 +1,12 @@
 "use client";
 import React, { useState } from "react";
+import { Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+
 import {
   Card,
   CardContent,
@@ -12,43 +15,67 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
+import { mutate } from "swr";
+import APIClient from "@/utils/apiClient";
 
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+const submitEmail = async (email: string, locale: string) => {
+  const client = new APIClient();
+  const response = await client.post("register", {
+    email,
+    locale,
+  });
+
+  return response;
+};
 
 const EmailForm: React.FC = () => {
   const [email, setEmail] = useState<string>("");
   const [isValid, setIsValid] = useState<boolean>(true);
+  const [loading, setLoading] = useState<boolean>(false);
+  const [emailSent, setEmailSent] = useState(false);
   const t = useTranslations("Register");
+  const locale = useLocale();
 
-  // 处理Email的变化并验证Email格式
   const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const currentEmail = e.target.value;
     setEmail(currentEmail);
-
-    // 使用简单的正则表达式验证Email格式
-
-    setIsValid(currentEmail.length === 0 || emailRegex.test(currentEmail));
   };
 
-  // 处理表单提交
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+  const handleInputBlur = () => {
+    if (email.length === 0 || !emailRegex.test(email)) {
+      setIsValid(false);
+    }
+  };
 
-    if (isValid) {
-      alert("Email submitted: " + email);
-      // 此处可以添加提交逻辑
-    } else {
-      alert("Please enter a valid email address.");
+  const handleSubmit = async () => {
+    setLoading(true);
+    try {
+      const result = await mutate("/register", submitEmail(email, locale), {
+        revalidate: false,
+      });
+      console.log(result);
+      setLoading(false);
+      setEmailSent(true);
+    } catch (err) {
+      console.log(err);
     }
   };
 
   return (
-    <Card className="w-[480px] h-[340px]">
+    <Card className="w-[480px]">
       <CardHeader>
         <CardTitle>{t("title")}</CardTitle>
         <CardDescription>{t("onboard")}</CardDescription>
       </CardHeader>
       <CardContent>
+        {emailSent && (
+          <Alert className="mb-4">
+            <AlertTitle>{t("emailAlertTitle")}</AlertTitle>
+            <AlertDescription>{t("emailAlertDescription")}</AlertDescription>
+          </Alert>
+        )}
         <div className="grid w-full items-center gap-1.5">
           <Label htmlFor="email">{t("email")}</Label>
           <Input
@@ -56,15 +83,25 @@ const EmailForm: React.FC = () => {
             placeholder={t("registerPlaceholder")}
             value={email}
             onChange={handleEmailChange}
+            onBlur={handleInputBlur}
+            disabled={emailSent}
             className={`w-full ${
-              !isValid ? "!ring-1 !ring-red-500 !ring-offset-0" : ""
+              !isValid && !emailRegex.test(email)
+                ? "!ring-1 !ring-red-500 !ring-offset-0"
+                : ""
             }`}
           />
+          {!isValid && !emailRegex.test(email) && (
+            <div className="text-red-500 text-xs">{t("invalidEmail")}</div>
+          )}
           <Button
             className="w-full mt-2"
             type="button"
-            disabled={!emailRegex.test(email)}
+            disabled={!emailRegex.test(email) || loading || emailSent}
+            onClick={handleSubmit}
           >
+            {loading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+
             {t("submit")}
           </Button>
         </div>

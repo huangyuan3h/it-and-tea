@@ -10,8 +10,11 @@
 
     "email": "Email",
     "registerPlaceholder": "Enter your email",
+    "invalidEmail": "email is not valid",
     "submit": "Submit",
     "loginLabel": "Already have an account?",
-    "login": "Login"
+    "login": "Login",
+    "emailAlertTitle": "Email Sent Successfully",
+    "emailAlertDescription": "A registration email has been sent to your mailbox. Please click the invitation link to continue!"
   }
 }
