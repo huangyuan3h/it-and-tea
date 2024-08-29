@@ -1,11 +1,12 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
 import { useTranslations, useLocale } from "next-intl";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+import { useRouter } from "next/navigation";
 
 import {
   Card,
@@ -37,6 +38,7 @@ const EmailForm: React.FC = () => {
   const [emailSent, setEmailSent] = useState(false);
   const t = useTranslations("Register");
   const locale = useLocale();
+  const router = useRouter();
 
   const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const currentEmail = e.target.value;
@@ -55,12 +57,23 @@ const EmailForm: React.FC = () => {
       const result = await mutate("/register", submitEmail(email, locale), {
         revalidate: false,
       });
-      console.log(result);
       setLoading(false);
       setEmailSent(true);
     } catch (err) {
       console.log(err);
     }
+  };
+
+  useEffect(() => {
+    if (emailSent) {
+      setTimeout(() => {
+        router.push("login");
+      }, 30000);
+    }
+  }, [emailSent]);
+
+  const handleClickLogin = () => {
+    router.push("login");
   };
 
   return (
@@ -109,7 +122,12 @@ const EmailForm: React.FC = () => {
         <Separator className="mt-4" />
         <div className="mt-2">
           <Label> {t("loginLabel")}</Label>
-          <Button variant="secondary" className="w-full mt-2" type="button">
+          <Button
+            variant="secondary"
+            className="w-full mt-2"
+            type="button"
+            onClick={handleClickLogin}
+          >
             {t("login")}
           </Button>
         </div>

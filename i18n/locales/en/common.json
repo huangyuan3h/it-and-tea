@@ -10,7 +10,7 @@
 
     "email": "Email",
     "registerPlaceholder": "Enter your email",
-    "invalidEmail": "email is not valid",
+    "invalidEmail": "Email is not valid",
     "submit": "Submit",
     "loginLabel": "Already have an account?",
     "login": "Login",
