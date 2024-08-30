@@ -10,7 +10,11 @@ export default {
   },
   stacks(app) {
     app.stack(function Site({ stack }) {
-      const site = new NextjsSite(stack, "site");
+      const site = new NextjsSite(stack, "site", {
+        environment: {
+          NEXT_PUBLIC_BACKEND_API: process.env.NEXT_PUBLIC_BACKEND_API ?? "",
+        },
+      });
 
       stack.addOutputs({
         SiteUrl: site.url,

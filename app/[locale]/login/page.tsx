@@ -1,11 +1,11 @@
-import { useTranslations } from "next-intl";
+import { unstable_setRequestLocale } from "next-intl/server";
 
 export default function Register({
   params: { locale },
 }: {
   params: { locale: string };
 }) {
-  const t = useTranslations("Register");
+  unstable_setRequestLocale(locale);
 
   return (
     <main>
