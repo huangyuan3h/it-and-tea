@@ -20,6 +20,7 @@
     "title": "Créez un compte IT&TEA",
     "description": "Une dernière étape avant de commencer votre essai gratuit.",
     "tokenExpiredTitle": "Jeton Expiré",
-    "tokenExpiredDescription": "Le lien que vous avez cliqué a expiré. Veuillez demander un nouveau lien pour continuer."
+    "tokenExpiredDescription": "Le lien que vous avez cliqué a expiré. Veuillez demander un nouveau lien pour continuer.",
+    "backToRegister": "S'inscrire à nouveau"
   }
 }

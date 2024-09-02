@@ -21,6 +21,7 @@
     "title": "创建一个 IT&TEA 账户",
     "description": "开始您的免费试用前的最后一步。",
     "tokenExpiredTitle": "令牌已过期",
-    "tokenExpiredDescription": "您点击的链接已过期。请请求一个新的链接以继续操作。"
+    "tokenExpiredDescription": "您点击的链接已过期。请请求一个新的链接以继续操作。",
+    "backToRegister": "重新注册"
   }
 }

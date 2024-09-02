@@ -20,6 +20,7 @@
     "title": "Create an IT&TEA account",
     "description": "One last step before starting your free trial.",
     "tokenExpiredTitle": "Token Expired",
-    "tokenExpiredDescription": "The link you clicked has expired. Please request a new link to continue."
+    "tokenExpiredDescription": "The link you clicked has expired. Please request a new link to continue.",
+    "backToRegister": "Register Again"
   }
 }

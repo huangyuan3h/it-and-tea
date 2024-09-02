@@ -73,13 +73,16 @@ const CreateAccountPanel: React.FC<CreateAccountPanelProps> = ({
   const locale = useLocale();
   const router = useRouter();
   const [isExpire, setExpire] = useState(false);
-  const { data } = useSWR(`${token}`, (token: string) => getToken(token));
+  const { data, isLoading } = useSWR(`${token}`, (token: string) =>
+    getToken(token)
+  );
 
   useEffect(() => {
-    if (!data) {
+    console.log(data);
+    if (!data && !isLoading) {
       setExpire(true);
       setTimeout(() => {
-        router.push("/register");
+        router.push(`/${locale}/register`);
       }, 1000 * 30);
     }
   }, [data]);
@@ -124,6 +127,15 @@ const CreateAccountPanel: React.FC<CreateAccountPanelProps> = ({
                 {t("tokenExpiredDescription")}
               </AlertDescription>
             </Alert>
+            <div className="mt-4">
+              <Button
+                className="w-full mt-2"
+                type="button"
+                onClick={() => router.push(`/${locale}/register`)}
+              >
+                {t("backToRegister")}
+              </Button>
+            </div>
           </div>
         )}
 
