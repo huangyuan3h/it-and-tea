@@ -15,5 +15,11 @@
     "login": "Connexion",
     "emailAlertTitle": "E-mail envoyé avec succès",
     "emailAlertDescription": "Un e-mail d'inscription a été envoyé à votre boîte de réception. Veuillez cliquer sur le lien d'invitation pour continuer !"
+  },
+  "CreateAccount": {
+    "title": "Créez un compte IT&TEA",
+    "description": "Une dernière étape avant de commencer votre essai gratuit.",
+    "tokenExpiredTitle": "Jeton Expiré",
+    "tokenExpiredDescription": "Le lien que vous avez cliqué a expiré. Veuillez demander un nouveau lien pour continuer."
   }
 }

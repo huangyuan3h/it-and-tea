@@ -7,7 +7,6 @@
   "Register": {
     "title": "Register",
     "onboard": "onboard to IT&TEA",
-
     "email": "Email",
     "registerPlaceholder": "Enter your email",
     "invalidEmail": "Email is not valid",
@@ -16,5 +15,11 @@
     "login": "Login",
     "emailAlertTitle": "Email Sent Successfully",
     "emailAlertDescription": "A registration email has been sent to your mailbox. Please click the invitation link to continue!"
+  },
+  "CreateAccount": {
+    "title": "Create an IT&TEA account",
+    "description": "One last step before starting your free trial.",
+    "tokenExpiredTitle": "Token Expired",
+    "tokenExpiredDescription": "The link you clicked has expired. Please request a new link to continue."
   }
 }
