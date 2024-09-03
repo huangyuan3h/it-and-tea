@@ -21,6 +21,14 @@
     "description": "Une dernière étape avant de commencer votre essai gratuit.",
     "tokenExpiredTitle": "Jeton Expiré",
     "tokenExpiredDescription": "Le lien que vous avez cliqué a expiré. Veuillez demander un nouveau lien pour continuer.",
-    "backToRegister": "S'inscrire à nouveau"
+    "backToRegister": "S'inscrire à nouveau",
+    "emailLabel": "Email",
+    "emailPlaceholder": "Entrez votre email",
+    "nameLabel": "Nom",
+    "namePlaceholder": "Entrez votre nom",
+    "passwordLabel": "Mot de passe",
+    "passwordPlaceholder": "Entrez votre mot de passe",
+    "confirmPasswordLabel": "Confirmer le mot de passe",
+    "confirmPasswordPlaceholder": "Entrez à nouveau votre mot de passe"
   }
 }

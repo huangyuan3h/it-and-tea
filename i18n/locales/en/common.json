@@ -21,6 +21,14 @@
     "description": "One last step before starting your free trial.",
     "tokenExpiredTitle": "Token Expired",
     "tokenExpiredDescription": "The link you clicked has expired. Please request a new link to continue.",
-    "backToRegister": "Register Again"
+    "backToRegister": "Register Again",
+    "emailLabel": "Email",
+    "emailPlaceholder": "Enter your email",
+    "nameLabel": "Name",
+    "namePlaceholder": "Enter your name",
+    "passwordLabel": "Password",
+    "passwordPlaceholder": "Enter your password",
+    "confirmPasswordLabel": "Confirm Password",
+    "confirmPasswordPlaceholder": "Re-enter your password"
   }
 }

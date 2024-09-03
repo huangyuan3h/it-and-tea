@@ -3,7 +3,7 @@
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { useTranslations } from "next-intl";
-import { HTMLInputTypeAttribute } from "react";
+import { HTMLInputTypeAttribute, useEffect } from "react";
 
 export interface InputAreaProps {
   value: string;
@@ -12,8 +12,8 @@ export interface InputAreaProps {
   disabled?: boolean;
   isValid?: boolean;
   errorMessage?: string;
-  onChange: (componentKey: string, value: string) => void;
-  onBlur: () => void;
+  onChange?: (componentKey: string, value: string) => void;
+  onBlur?: () => void;
 }
 
 const InputArea: React.FC<InputAreaProps> = ({
@@ -31,11 +31,13 @@ const InputArea: React.FC<InputAreaProps> = ({
   const handleValueChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
     const currentValue = e.target.value;
-    onChange(componentKey, currentValue);
+    if (onChange) {
+      onChange(componentKey, currentValue);
+    }
   };
 
   return (
-    <div className="grid w-full items-center gap-1.5">
+    <div className="grid w-full items-center gap-1.5 mt-4">
       <Label htmlFor={componentKey}>{t(componentKey + "Label")}</Label>
       <Input
         type={type}
