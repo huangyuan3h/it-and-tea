@@ -14,7 +14,6 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Label } from "@/components/ui/label";
 import useSWR, { mutate } from "swr";
 import APIClient from "@/utils/apiClient";
 import InputArea from "./InputArea";
@@ -39,11 +38,18 @@ export interface CreateAccountPanelProps {
   token?: string;
 }
 
+type FormSchema = {
+  email: ZodSchema;
+  name: ZodSchema;
+  password: ZodSchema;
+  confirmPassword: ZodSchema;
+};
+
 const CreateAccountPanel: React.FC<CreateAccountPanelProps> = ({
   token,
 }: CreateAccountPanelProps) => {
   const t = useTranslations("CreateAccount");
-  const createAccountSchema = useRef<ZodSchema>();
+  const createAccountSchema = useRef<FormSchema>();
   const locale = useLocale();
   const router = useRouter();
   const [isExpire, setExpire] = useState(false);
@@ -51,6 +57,13 @@ const CreateAccountPanel: React.FC<CreateAccountPanelProps> = ({
     getToken(token)
   );
   const [form, setForm] = useState({
+    email: "",
+    name: "",
+    password: "",
+    confirmPassword: "",
+  });
+
+  const [errorMessages, setErrorMessages] = useState({
     email: "",
     name: "",
     password: "",
@@ -71,63 +84,46 @@ const CreateAccountPanel: React.FC<CreateAccountPanelProps> = ({
   }, [data]);
 
   useEffect(() => {
-    if (createAccountSchema.current === undefined) {
-      createAccountSchema.current = z
-        .object({
-          email: z.string().email("请输入有效的邮箱地址"), // 验证邮箱格式
-          name: z
-            .string()
-            .min(4, "用户名必须至少有4个字符")
-            .max(50, "用户名不能超过50个字符"), // 验证长度在4到50字符之间
-          password: z
-            .string()
-            .min(6, "密码必须至少有6个字符")
-            .max(20, "密码不能超过20个字符")
-            .regex(/[a-z]/, "密码必须包含小写字母")
-            .regex(/[A-Z]/, "密码必须包含大写字母")
-            .regex(/[0-9]/, "密码必须包含数字"), // 验证密码长度和复杂性
-          confirmPassword: z.string(), // 确认密码
-        })
-        .refine((data) => data.password === data.confirmPassword, {
-          message: "密码和确认密码必须相同",
-          path: ["confirmPassword"], // 指定错误路径
-        });
-    }
-  }, []);
+    createAccountSchema.current = {
+      email: z.string().email(t("emailInvalid")),
+      name: z.string().min(4, t("nameMinLength")).max(50, t("nameMaxLength")),
+      password: z
+        .string()
+        .min(6, t("passwordMinLength"))
+        .max(20, t("passwordMaxLength"))
+        .regex(/[a-z]/, t("passwordLowerCase"))
+        .regex(/[A-Z]/, t("passwordUpperCase"))
+        .regex(/[0-9]/, t("passwordNumber")),
+      confirmPassword: z.literal(form.password, {
+        errorMap: () => ({ message: t("passwordMismatch") }),
+      }),
+    };
+  }, [form.password]);
 
   const handleChange = (key: string, val: string) => {
     setForm({ ...form, [key]: val });
   };
 
-  const handleBlur = () => {
-    console.log(form);
-    const schema = z
-      .object({
-        email: z.string().email("请输入有效的邮箱地址"), // 验证邮箱格式
-        name: z
-          .string()
-          .min(4, "用户名必须至少有4个字符")
-          .max(50, "用户名不能超过50个字符"), // 验证长度在4到50字符之间
-        password: z
-          .string()
-          .min(6, "密码必须至少有6个字符")
-          .max(20, "密码不能超过20个字符")
-          .regex(/[a-z]/, "密码必须包含小写字母")
-          .regex(/[A-Z]/, "密码必须包含大写字母")
-          .regex(/[0-9]/, "密码必须包含数字"), // 验证密码长度和复杂性
-        confirmPassword: z.string(), // 确认密码
-      })
-      .refine((data) => data.password === data.confirmPassword, {
-        message: "密码和确认密码必须相同",
-        path: ["confirmPassword"], // 指定错误路径
-      });
+  const handleBlur = (key: string) => {
+    if (!createAccountSchema.current) return;
 
-    const { data, success, error } = schema.safeParse(form);
-    console.log(data, success, error);
-    // if (createAccountSchema.current) {
-    //   console.log(createAccountSchema.current.parse(form));
-    // }
+    const formSchema = createAccountSchema.current;
+    const targetSchema = formSchema[key as keyof FormSchema];
+
+    const { success, data, error } = targetSchema.safeParse(
+      form[key as keyof FormSchema]
+    );
+    if (success) {
+      setErrorMessages({ ...errorMessages, [key]: "" });
+    } else {
+      setErrorMessages({
+        ...errorMessages,
+        [key]: JSON.parse(error.message)[0].message,
+      });
+    }
   };
+
+  const handleSubmit = () => {};
 
   return (
     <Card className="w-[480px]">
@@ -167,7 +163,8 @@ const CreateAccountPanel: React.FC<CreateAccountPanelProps> = ({
         <InputArea
           value={form.name}
           componentKey="name"
-          isValid
+          isValid={errorMessages["name"] === ""}
+          errorMessage={errorMessages["name"]}
           onChange={handleChange}
           onBlur={handleBlur}
         />
@@ -175,7 +172,8 @@ const CreateAccountPanel: React.FC<CreateAccountPanelProps> = ({
           value={form.password}
           componentKey="password"
           type="password"
-          isValid
+          isValid={errorMessages["password"] === ""}
+          errorMessage={errorMessages["password"]}
           onChange={handleChange}
           onBlur={handleBlur}
         />
@@ -183,10 +181,14 @@ const CreateAccountPanel: React.FC<CreateAccountPanelProps> = ({
           value={form.confirmPassword}
           componentKey="confirmPassword"
           type="password"
-          isValid
+          isValid={errorMessages["confirmPassword"] === ""}
+          errorMessage={errorMessages["confirmPassword"]}
           onChange={handleChange}
           onBlur={handleBlur}
         />
+        <Button className="w-full mt-2" type="button" onClick={handleSubmit}>
+          {t("createAccount")}
+        </Button>
       </CardContent>
     </Card>
   );

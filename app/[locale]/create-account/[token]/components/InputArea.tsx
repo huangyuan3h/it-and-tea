@@ -13,7 +13,7 @@ export interface InputAreaProps {
   isValid?: boolean;
   errorMessage?: string;
   onChange?: (componentKey: string, value: string) => void;
-  onBlur?: () => void;
+  onBlur?: (componentKey: string) => void;
 }
 
 const InputArea: React.FC<InputAreaProps> = ({
@@ -36,6 +36,12 @@ const InputArea: React.FC<InputAreaProps> = ({
     }
   };
 
+  const handleBlur = () => {
+    if (onBlur) {
+      onBlur(componentKey);
+    }
+  };
+
   return (
     <div className="grid w-full items-center gap-1.5 mt-4">
       <Label htmlFor={componentKey}>{t(componentKey + "Label")}</Label>
@@ -44,7 +50,7 @@ const InputArea: React.FC<InputAreaProps> = ({
         placeholder={t(componentKey + "Placeholder")}
         value={value}
         onChange={handleValueChange}
-        onBlur={onBlur}
+        onBlur={handleBlur}
         disabled={disabled}
         className={`w-full ${
           !isValid ? "!ring-1 !ring-red-500 !ring-offset-0" : ""

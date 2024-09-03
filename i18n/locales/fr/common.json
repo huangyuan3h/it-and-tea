@@ -29,6 +29,16 @@
     "passwordLabel": "Mot de passe",
     "passwordPlaceholder": "Entrez votre mot de passe",
     "confirmPasswordLabel": "Confirmer le mot de passe",
-    "confirmPasswordPlaceholder": "Entrez à nouveau votre mot de passe"
+    "confirmPasswordPlaceholder": "Entrez à nouveau votre mot de passe",
+    "emailInvalid": "Veuillez entrer une adresse e-mail valide",
+    "nameMinLength": "Le nom doit comporter au moins 4 caractères",
+    "nameMaxLength": "Le nom ne peut pas dépasser 50 caractères",
+    "passwordMinLength": "Le mot de passe doit comporter au moins 6 caractères",
+    "passwordMaxLength": "Le mot de passe ne peut pas dépasser 20 caractères",
+    "passwordLowerCase": "Le mot de passe doit contenir une lettre minuscule",
+    "passwordUpperCase": "Le mot de passe doit contenir une lettre majuscule",
+    "passwordNumber": "Le mot de passe doit contenir un chiffre",
+    "passwordMismatch": "Les mots de passe ne correspondent pas",
+    "createAccount": "Créer un compte"
   }
 }

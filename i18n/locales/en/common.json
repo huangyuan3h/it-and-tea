@@ -29,6 +29,16 @@
     "passwordLabel": "Password",
     "passwordPlaceholder": "Enter your password",
     "confirmPasswordLabel": "Confirm Password",
-    "confirmPasswordPlaceholder": "Re-enter your password"
+    "confirmPasswordPlaceholder": "Re-enter your password",
+    "emailInvalid": "Please enter a valid email address",
+    "nameMinLength": "Name must be at least 4 characters",
+    "nameMaxLength": "Name cannot exceed 50 characters",
+    "passwordMinLength": "Password must be at least 6 characters",
+    "passwordMaxLength": "Password cannot exceed 20 characters",
+    "passwordLowerCase": "Password must contain a lowercase letter",
+    "passwordUpperCase": "Password must contain an uppercase letter",
+    "passwordNumber": "Password must contain a number",
+    "passwordMismatch": "Passwords do not match",
+    "createAccount": "Create Account"
   }
 }
