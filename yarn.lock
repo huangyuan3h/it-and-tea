@@ -5320,11 +5320,13 @@ __metadata:
     lucide-react: "npm:^0.436.0"
     next: "npm:14.2.7"
     next-intl: "npm:^3.17.4"
+    next-themes: "npm:^0.3.0"
     nookies: "npm:^2.5.2"
     open-next: "npm:^3.1.1"
     postcss: "npm:^8"
     react: "npm:^18"
     react-dom: "npm:^18"
+    sonner: "npm:^1.5.0"
     sst: "npm:2.43.7"
     swr: "npm:^2.2.5"
     tailwind-merge: "npm:^2.5.2"
@@ -8247,6 +8249,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"next-themes@npm:^0.3.0":
+  version: 0.3.0
+  resolution: "next-themes@npm:0.3.0"
+  peerDependencies:
+    react: ^16.8 || ^17 || ^18
+    react-dom: ^16.8 || ^17 || ^18
+  checksum: 10c0/72bd670ad6b9f547dc18cece340dfd1ac41e3e7b37eb321d4767db90bfa2c239f937011cd0efe35ca0081f1ea260051bc0868808ef39b0fbff2ddefd7146cec6
+  languageName: node
+  linkType: hard
+
 "next@npm:14.2.7":
   version: 14.2.7
   resolution: "next@npm:14.2.7"
@@ -9579,6 +9591,16 @@ __metadata:
     ip-address: "npm:^9.0.5"
     smart-buffer: "npm:^4.2.0"
   checksum: 10c0/d54a52bf9325165770b674a67241143a3d8b4e4c8884560c4e0e078aace2a728dffc7f70150660f51b85797c4e1a3b82f9b7aa25e0a0ceae1a243365da5c51a7
+  languageName: node
+  linkType: hard
+
+"sonner@npm:^1.5.0":
+  version: 1.5.0
+  resolution: "sonner@npm:1.5.0"
+  peerDependencies:
+    react: ^18.0.0
+    react-dom: ^18.0.0
+  checksum: 10c0/9561b5861bede7f874cc442e447a68c8bfa6e4eadad603bc04e38db35a8b8108741f595a12c9856742062bae230ffedf73122015940491f482c5aa9e68ee85e0
   languageName: node
   linkType: hard
 

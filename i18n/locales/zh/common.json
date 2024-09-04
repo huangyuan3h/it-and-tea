@@ -40,6 +40,9 @@
     "passwordUpperCase": "密码必须包含大写字母",
     "passwordNumber": "密码必须包含数字",
     "passwordMismatch": "与密码不相同",
-    "createAccount": "创建账户"
+    "createAccount": "创建账户",
+    "accountCreationSuccessTitle": "账号已成功创建",
+    "accountCreationSuccessDescription": "您的 IT&TEA 账号已成功创建，并且已登录系统，您可以开始您的商业活动。",
+    "returnToHomepage": "返回首页"
   }
 }

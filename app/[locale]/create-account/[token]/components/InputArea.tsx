@@ -12,6 +12,7 @@ export interface InputAreaProps {
   disabled?: boolean;
   isValid?: boolean;
   errorMessage?: string;
+  maxLength?: number;
   onChange?: (componentKey: string, value: string) => void;
   onBlur?: (componentKey: string) => void;
 }
@@ -23,6 +24,7 @@ const InputArea: React.FC<InputAreaProps> = ({
   disabled,
   isValid,
   errorMessage,
+  maxLength,
   onChange,
   onBlur,
 }: InputAreaProps) => {
@@ -52,6 +54,7 @@ const InputArea: React.FC<InputAreaProps> = ({
         onChange={handleValueChange}
         onBlur={handleBlur}
         disabled={disabled}
+        maxLength={maxLength}
         className={`w-full ${
           !isValid ? "!ring-1 !ring-red-500 !ring-offset-0" : ""
         }`}

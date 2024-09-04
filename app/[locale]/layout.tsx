@@ -7,6 +7,7 @@ import { getMessages } from "next-intl/server";
 import "../globals.css";
 import { locales } from "@/i18n";
 import { unstable_setRequestLocale } from "next-intl/server";
+import { Toaster } from "@/components/ui/sonner";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -37,6 +38,7 @@ export default async function RootLayout({
       >
         <NextIntlClientProvider messages={messages}>
           {children}
+          <Toaster />
         </NextIntlClientProvider>
       </body>
     </html>

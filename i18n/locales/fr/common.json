@@ -39,6 +39,9 @@
     "passwordUpperCase": "Le mot de passe doit contenir une lettre majuscule",
     "passwordNumber": "Le mot de passe doit contenir un chiffre",
     "passwordMismatch": "Les mots de passe ne correspondent pas",
-    "createAccount": "Créer un compte"
+    "createAccount": "Créer un compte",
+    "accountCreationSuccessTitle": "Compte créé avec succès",
+    "accountCreationSuccessDescription": "Votre compte IT&TEA a été créé avec succès et vous êtes maintenant connecté. Vous pouvez commencer vos activités commerciales.",
+    "returnToHomepage": "Retour à la page d'accueil"
   }
 }

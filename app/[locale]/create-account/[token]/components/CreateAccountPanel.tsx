@@ -3,9 +3,11 @@ import React, { useEffect, useRef, useState } from "react";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { toast } from "sonner";
 
 import { useTranslations, useLocale } from "next-intl";
 import { useRouter } from "next/navigation";
+import { setCookie } from "nookies";
 
 import {
   Card,
@@ -34,6 +36,22 @@ const getToken = async (token: string) => {
   }
 };
 
+type CreateAccountRequest = {
+  name: string;
+  password: string;
+  token: string;
+};
+
+const submitCreateAccount = async (data: CreateAccountRequest) => {
+  const client = new APIClient();
+  try {
+    const response = await client.post("create-account", data);
+    return response;
+  } catch (err) {
+    return null;
+  }
+};
+
 export interface CreateAccountPanelProps {
   token?: string;
 }
@@ -45,6 +63,13 @@ type FormSchema = {
   confirmPassword: ZodSchema;
 };
 
+type CreateFormType = {
+  email: string;
+  name: string;
+  password: string;
+  confirmPassword: string;
+};
+
 const CreateAccountPanel: React.FC<CreateAccountPanelProps> = ({
   token,
 }: CreateAccountPanelProps) => {
@@ -53,17 +78,18 @@ const CreateAccountPanel: React.FC<CreateAccountPanelProps> = ({
   const locale = useLocale();
   const router = useRouter();
   const [isExpire, setExpire] = useState(false);
+  const [loading, setLoading] = useState<boolean>(false);
   const { data, isLoading } = useSWR(`${token}`, (token: string) =>
     getToken(token)
   );
-  const [form, setForm] = useState({
+  const [form, setForm] = useState<CreateFormType>({
     email: "",
     name: "",
     password: "",
     confirmPassword: "",
   });
 
-  const [errorMessages, setErrorMessages] = useState({
+  const [errorMessages, setErrorMessages] = useState<CreateFormType>({
     email: "",
     name: "",
     password: "",
@@ -86,11 +112,10 @@ const CreateAccountPanel: React.FC<CreateAccountPanelProps> = ({
   useEffect(() => {
     createAccountSchema.current = {
       email: z.string().email(t("emailInvalid")),
-      name: z.string().min(4, t("nameMinLength")).max(50, t("nameMaxLength")),
+      name: z.string().min(6, t("nameMinLength")),
       password: z
         .string()
         .min(6, t("passwordMinLength"))
-        .max(20, t("passwordMaxLength"))
         .regex(/[a-z]/, t("passwordLowerCase"))
         .regex(/[A-Z]/, t("passwordUpperCase"))
         .regex(/[0-9]/, t("passwordNumber")),
@@ -123,7 +148,48 @@ const CreateAccountPanel: React.FC<CreateAccountPanelProps> = ({
     }
   };
 
-  const handleSubmit = () => {};
+  const handleSubmit = async () => {
+    setLoading(true);
+    const result = await mutate(
+      "/create-account",
+      submitCreateAccount({
+        name: form.name,
+        password: form.password,
+        token: token ?? "",
+      }),
+      {
+        revalidate: false,
+      }
+    );
+    if (result.Authorization !== "") {
+      // set cookies
+      setCookie(null, "Authorization", result.Authorization);
+
+      toast(t("accountCreationSuccessTitle"), {
+        description: t("accountCreationSuccessDescription"),
+        action: {
+          label: t("returnToHomepage"),
+          onClick: () => router.push(`/${locale}/`),
+        },
+      });
+
+      setTimeout(() => {
+        router.push(`/${locale}/`);
+      }, 30000);
+    }
+  };
+
+  const isAllValid = () => {
+    return (
+      Object.keys(errorMessages).every(
+        (k) => errorMessages[k as keyof CreateFormType] === ""
+      ) &&
+      Object.keys(form).every(
+        (k) => form[k as keyof CreateFormType].length > 0
+      ) &&
+      form.password === form.confirmPassword
+    );
+  };
 
   return (
     <Card className="w-[480px]">
@@ -165,6 +231,7 @@ const CreateAccountPanel: React.FC<CreateAccountPanelProps> = ({
           componentKey="name"
           isValid={errorMessages["name"] === ""}
           errorMessage={errorMessages["name"]}
+          maxLength={50}
           onChange={handleChange}
           onBlur={handleBlur}
         />
@@ -174,6 +241,7 @@ const CreateAccountPanel: React.FC<CreateAccountPanelProps> = ({
           type="password"
           isValid={errorMessages["password"] === ""}
           errorMessage={errorMessages["password"]}
+          maxLength={20}
           onChange={handleChange}
           onBlur={handleBlur}
         />
@@ -183,10 +251,17 @@ const CreateAccountPanel: React.FC<CreateAccountPanelProps> = ({
           type="password"
           isValid={errorMessages["confirmPassword"] === ""}
           errorMessage={errorMessages["confirmPassword"]}
+          maxLength={20}
           onChange={handleChange}
           onBlur={handleBlur}
         />
-        <Button className="w-full mt-2" type="button" onClick={handleSubmit}>
+        <Button
+          className="w-full mt-6"
+          type="button"
+          onClick={handleSubmit}
+          disabled={loading || !isAllValid()}
+        >
+          {loading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
           {t("createAccount")}
         </Button>
       </CardContent>
