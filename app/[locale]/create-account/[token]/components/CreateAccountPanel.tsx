@@ -175,7 +175,7 @@ const CreateAccountPanel: React.FC<CreateAccountPanelProps> = ({
 
       setTimeout(() => {
         router.push(`/${locale}/`);
-      }, 30000);
+      }, 5000);
     }
   };
 

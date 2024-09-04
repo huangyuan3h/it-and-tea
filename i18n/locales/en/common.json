@@ -41,7 +41,7 @@
     "passwordMismatch": "Passwords do not match",
     "createAccount": "Create Account",
     "accountCreationSuccessTitle": "Account Successfully Created",
-    "accountCreationSuccessDescription": "Your IT&TEA account has been successfully created and you are now logged in. You may begin your business activities.",
-    "returnToHomepage": "Return to Homepage"
+    "accountCreationSuccessDescription": "Your IT&TEA account has been successfully created and you are now logged in.",
+    "returnToHomepage": "Homepage"
   }
 }
