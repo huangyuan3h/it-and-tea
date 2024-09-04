@@ -107,7 +107,7 @@ const CreateAccountPanel: React.FC<CreateAccountPanelProps> = ({
     if (data && !isLoading) {
       setForm({ ...form, email: data.email });
     }
-  }, [data]);
+  }, [data, isLoading, locale, router, form]);
 
   useEffect(() => {
     createAccountSchema.current = {

@@ -70,7 +70,7 @@ const EmailForm: React.FC = () => {
         router.push("login");
       }, 30000);
     }
-  }, [emailSent]);
+  }, [emailSent, router]);
 
   const handleClickLogin = () => {
     router.push("login");
