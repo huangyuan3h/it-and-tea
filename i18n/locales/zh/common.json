@@ -3,5 +3,46 @@
     "welcome": "zh",
     "description": "zh description",
     "speech": "你好！ 欢迎来到 IT and tea"
+  },
+  "Register": {
+    "title": "注册",
+    "onboard": "加入 IT&TEA",
+
+    "email": "电子邮件",
+    "registerPlaceholder": "请输入你的电子邮件",
+    "invalidEmail": "电子邮件无效",
+    "submit": "提交",
+    "loginLabel": "已经有账号了？",
+    "login": "登录",
+    "emailAlertTitle": "邮件发送成功",
+    "emailAlertDescription": "一封注册邮件已经发送到了你的邮箱，请点击邀请链接继续！"
+  },
+  "CreateAccount": {
+    "title": "创建一个 IT&TEA 账户",
+    "description": "开始您的免费试用前的最后一步。",
+    "tokenExpiredTitle": "令牌已过期",
+    "tokenExpiredDescription": "您点击的链接已过期。请请求一个新的链接以继续操作。",
+    "backToRegister": "重新注册",
+    "emailLabel": "邮箱",
+    "emailPlaceholder": "请输入您的邮箱",
+    "nameLabel": "姓名",
+    "namePlaceholder": "请输入您的姓名",
+    "passwordLabel": "密码",
+    "passwordPlaceholder": "请输入您的密码",
+    "confirmPasswordLabel": "确认密码",
+    "confirmPasswordPlaceholder": "请再次输入您的密码",
+    "emailInvalid": "请输入有效的邮箱地址",
+    "nameMinLength": "用户名必须至少有4个字符",
+    "nameMaxLength": "用户名不能超过50个字符",
+    "passwordMinLength": "密码必须至少有6个字符",
+    "passwordMaxLength": "密码不能超过20个字符",
+    "passwordLowerCase": "密码必须包含小写字母",
+    "passwordUpperCase": "密码必须包含大写字母",
+    "passwordNumber": "密码必须包含数字",
+    "passwordMismatch": "与密码不相同",
+    "createAccount": "创建账户",
+    "accountCreationSuccessTitle": "账号已成功创建",
+    "accountCreationSuccessDescription": "您的 IT&TEA 账号已成功创建，并且已登录系统，您可以开始您的商业活动。",
+    "returnToHomepage": "返回首页"
   }
 }

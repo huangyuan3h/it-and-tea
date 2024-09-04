@@ -43,3 +43,11 @@ next-env.d.ts
 
 .yarn
 .vscode
+
+# sst
+.sst
+
+# open-next
+.open-next
+
+.env*
