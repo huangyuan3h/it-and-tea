@@ -1,5 +1,21 @@
 {
   "HomePage": {
+    "meta": {
+      "title": "IT and Tea - Leading AI Solutions for Business Innovation",
+      "description": "IT and Tea is a cutting-edge AI company delivering innovative solutions to drive business growth and transformation. Our expertise spans artificial intelligence, data analysis, and automation, helping businesses thrive in the digital era. Explore how our AI-powered products and services can empower your future.",
+      "keywords": {
+        "ai_solutions": "AI solutions",
+        "business_innovation": "business innovation",
+        "artificial_intelligence": "artificial intelligence",
+        "data_analysis": "data analysis",
+        "automation": "automation",
+        "ai_powered_products": "AI-powered products",
+        "digital_transformation": "digital transformation",
+        "ai_company": "AI company",
+        "cutting_edge_technology": "cutting-edge technology",
+        "it_services": "IT services"
+      }
+    },
     "welcome": "Welcome",
     "description": "This is an example description",
     "speech": "Hello, welcome to IT and tea"

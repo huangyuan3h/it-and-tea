@@ -1,5 +1,21 @@
 {
   "HomePage": {
+    "meta": {
+      "title": "IT and Tea - Solutions IA de pointe pour l'innovation commerciale",
+      "description": "IT and Tea est une entreprise innovante en intelligence artificielle offrant des solutions pour stimuler la croissance et la transformation des entreprises. Notre expertise couvre l'intelligence artificielle, l'analyse des données et l'automatisation, aidant les entreprises à prospérer à l'ère numérique. Découvrez comment nos produits et services alimentés par l'IA peuvent soutenir votre avenir.",
+      "keywords": {
+        "ai_solutions": "solutions IA",
+        "business_innovation": "innovation commerciale",
+        "artificial_intelligence": "intelligence artificielle",
+        "data_analysis": "analyse des données",
+        "automation": "automatisation",
+        "ai_powered_products": "produits alimentés par l'IA",
+        "digital_transformation": "transformation numérique",
+        "ai_company": "entreprise IA",
+        "cutting_edge_technology": "technologie de pointe",
+        "it_services": "services informatiques"
+      }
+    },
     "welcome": "fr",
     "description": "fr description",
     "speech": "Bonjour, bienvenue chez IT and Tea."
