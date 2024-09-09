@@ -2,6 +2,7 @@
 import { Header } from "@/components/header";
 
 import { useTranslations } from "next-intl";
+import { TopSlider } from "./components/top-slider";
 
 export default function Home({
   params: { locale },
@@ -13,6 +14,7 @@ export default function Home({
   return (
     <main>
       <Header />
+      <TopSlider />
       <div className="container">
         <h1>{t("welcome")}</h1>
         <p>{t("description")}</p>

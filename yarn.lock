@@ -2647,6 +2647,25 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@radix-ui/react-aspect-ratio@npm:^1.1.0":
+  version: 1.1.0
+  resolution: "@radix-ui/react-aspect-ratio@npm:1.1.0"
+  dependencies:
+    "@radix-ui/react-primitive": "npm:2.0.0"
+  peerDependencies:
+    "@types/react": "*"
+    "@types/react-dom": "*"
+    react: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
+    react-dom: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
+  peerDependenciesMeta:
+    "@types/react":
+      optional: true
+    "@types/react-dom":
+      optional: true
+  checksum: 10c0/06ff86be238936bb7448896fcf1dd154ca543d5e13312eb7e7cf56aa141e13c9c41f2781b1e138b47b8b4a4f0b403de57498b1be94d1f286203d420e2e4dacb2
+  languageName: node
+  linkType: hard
+
 "@radix-ui/react-compose-refs@npm:1.1.0":
   version: 1.1.0
   resolution: "@radix-ui/react-compose-refs@npm:1.1.0"
@@ -5305,6 +5324,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "dtc-fe@workspace:."
   dependencies:
+    "@radix-ui/react-aspect-ratio": "npm:^1.1.0"
     "@radix-ui/react-label": "npm:^2.1.0"
     "@radix-ui/react-separator": "npm:^1.1.0"
     "@radix-ui/react-slot": "npm:^1.1.0"
@@ -5315,6 +5335,8 @@ __metadata:
     class-variance-authority: "npm:^0.7.0"
     clsx: "npm:^2.1.1"
     constructs: "npm:^10.3.0"
+    embla-carousel-autoplay: "npm:^8.2.1"
+    embla-carousel-react: "npm:^8.2.1"
     eslint: "npm:^8"
     eslint-config-next: "npm:14.2.7"
     lucide-react: "npm:^0.436.0"
@@ -5395,6 +5417,43 @@ __metadata:
   version: 1.5.13
   resolution: "electron-to-chromium@npm:1.5.13"
   checksum: 10c0/1d88ac39447e1d718c4296f92fe89836df4688daf2d362d6c49108136795f05a56dd9c950f1c6715e0395fa037c3b5f5ea686c543fdc90e6d74a005877c45022
+  languageName: node
+  linkType: hard
+
+"embla-carousel-autoplay@npm:^8.2.1":
+  version: 8.2.1
+  resolution: "embla-carousel-autoplay@npm:8.2.1"
+  peerDependencies:
+    embla-carousel: 8.2.1
+  checksum: 10c0/13d84714ac650bc03c6a57fc11f8c71c34489b859dce6f48f7aa8894da58a1ddc6026a0546246d6d6c7e1a38330d5e37917b7aaa7df7931e92915fb5d1f005c5
+  languageName: node
+  linkType: hard
+
+"embla-carousel-react@npm:^8.2.1":
+  version: 8.2.1
+  resolution: "embla-carousel-react@npm:8.2.1"
+  dependencies:
+    embla-carousel: "npm:8.2.1"
+    embla-carousel-reactive-utils: "npm:8.2.1"
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.1 || ^18.0.0
+  checksum: 10c0/ecc167163c47a831b1c2cfd88f4fe11c04841511a7009ee20c1b6c25da6f60c981da91bcc4d6d98074b09ff10e1ae17a62d18fbae6930a1794411512ec8080ee
+  languageName: node
+  linkType: hard
+
+"embla-carousel-reactive-utils@npm:8.2.1":
+  version: 8.2.1
+  resolution: "embla-carousel-reactive-utils@npm:8.2.1"
+  peerDependencies:
+    embla-carousel: 8.2.1
+  checksum: 10c0/7611dd66299c5da50f9b30ab78a296bd1d6ed67e4a687df7e77b2fb05074ef7e652060940595643b1977a9df362ff42b253f5ca2fc4b08612422ef9a57c8190d
+  languageName: node
+  linkType: hard
+
+"embla-carousel@npm:8.2.1":
+  version: 8.2.1
+  resolution: "embla-carousel@npm:8.2.1"
+  checksum: 10c0/7b480be5a57b9d1f12f880f2048e6019cc53b41bd1a30a1b1bd5f0b93328bda40761e82ab1457918ce3e1469afbce457665fdf16a349f7c7ed3ce6ab8930da41
   languageName: node
   linkType: hard
 
