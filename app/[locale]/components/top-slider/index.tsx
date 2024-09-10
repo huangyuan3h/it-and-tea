@@ -45,13 +45,21 @@ export const TopSlider: React.FC<{}> = () => {
     >
       <CarouselContent>
         <CarouselItem>
-          <SliderItem href={"/"} src="/images/home-north-path.jpg" />
+          <SliderItem
+            href={"https://north-path.it-t.xyz/"}
+            src="/images/home-north-path.jpg"
+            alt="north path"
+          />
         </CarouselItem>
         <CarouselItem>
-          <SliderItem href={"/"} src="/images/kairos.jpg" />
+          <SliderItem
+            href={"https://kairos.it-t.xyz/predict-report"}
+            src="/images/kairos.jpg"
+            alt="kairos"
+          />
         </CarouselItem>
         <CarouselItem>
-          <SliderItem href={"/"} src="/images/store.jpg" />
+          <SliderItem href={"/"} src="/images/store.jpg" alt="store" />
         </CarouselItem>
       </CarouselContent>
       <CarouselPrevious variant={"secondary"} />
