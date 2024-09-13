@@ -33,16 +33,24 @@
     "emailAlertDescription": "Un e-mail d'inscription a été envoyé à votre boîte de réception. Veuillez cliquer sur le lien d'invitation pour continuer !"
   },
   "Login": {
-    "title": "S'inscrire",
-    "onboard": "Inscrivez-vous à IT&TEA",
+    "title": "Connexion",
+    "description": "Connectez-vous à IT&TEA",
     "email": "E-mail",
-    "invalidEmail": "L'e-mail n'est pas valide",
     "registerPlaceholder": "Entrez votre e-mail",
+    "invalidEmail": "E-mail invalide",
+    "passwordLabel": "Mot de passe",
+    "passwordPlaceholder": "Entrez votre mot de passe",
+    "passwordMinLength": "Le mot de passe doit contenir au moins 6 caractères",
+    "passwordLowerCase": "Le mot de passe doit contenir une lettre minuscule",
+    "passwordUpperCase": "Le mot de passe doit contenir une lettre majuscule",
+    "passwordNumber": "Le mot de passe doit contenir un chiffre",
+    "invalidPassword": "Mot de passe invalide",
     "submit": "Soumettre",
-    "loginLabel": "Vous avez déjà un compte ?",
-    "login": "Connexion",
-    "emailAlertTitle": "E-mail envoyé avec succès",
-    "emailAlertDescription": "Un e-mail d'inscription a été envoyé à votre boîte de réception. Veuillez cliquer sur le lien d'invitation pour continuer !"
+    "register": "Créer un compte",
+    "socialLabel": "Utilisez votre compte social pour vous connecter :",
+    "emailLabel": "E-mail",
+    "emailPlaceholder": "Entrez votre e-mail",
+    "emailInvalid": "Veuillez entrer une adresse e-mail valide"
   },
   "CreateAccount": {
     "title": "Créez un compte IT&TEA",
