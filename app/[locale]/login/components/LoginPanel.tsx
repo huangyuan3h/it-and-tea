@@ -2,7 +2,6 @@
 import React, { useEffect, useState } from "react";
 import { Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
 import { useTranslations, useLocale } from "next-intl";
 import { useRouter } from "next/navigation";
@@ -19,6 +18,8 @@ import { Label } from "@/components/ui/label";
 import { mutate } from "swr";
 import APIClient from "@/utils/apiClient";
 import InputArea from "@/components/form/InputArea";
+import { toast } from "sonner";
+import { setCookie } from "nookies";
 
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -30,6 +31,16 @@ type LoginFormType = {
 type FormSchema = {
   email: ZodSchema;
   password: ZodSchema;
+};
+
+const LoginRequest = async (data: LoginFormType) => {
+  const client = new APIClient();
+  try {
+    const response = await client.post("login", data);
+    return response;
+  } catch (err) {
+    return null;
+  }
 };
 
 const LoginForm: React.FC = () => {
@@ -60,6 +71,24 @@ const LoginForm: React.FC = () => {
 
   const handleSubmit = async () => {
     setLoading(true);
+    try {
+      const result = await mutate("/create-account", LoginRequest(form), {
+        revalidate: false,
+      });
+      if (result.Authorization !== "") {
+        // set cookies
+        setCookie(null, "Authorization", result.Authorization);
+
+        setTimeout(() => {
+          router.push(`/${locale}/`);
+        }, 3000);
+      }
+    } catch (err) {
+      toast(t("loginErrorTitle"), {
+        description: t("loginErrorDescription"),
+      });
+      setLoading(false);
+    }
   };
 
   const handleClickRegister = () => {
@@ -138,7 +167,7 @@ const LoginForm: React.FC = () => {
           >
             {loading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
 
-            {t("submit")}
+            {t("login")}
           </Button>
           <Button
             className="w-full mt-2"

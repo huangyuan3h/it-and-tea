@@ -45,12 +45,14 @@
     "passwordUpperCase": "密码必须包含一个大写字母",
     "passwordNumber": "密码必须包含一个数字",
     "invalidPassword": "密码无效",
-    "submit": "提交",
+    "login": "登陆",
     "register": "注册账户",
     "socialLabel": "使用社交账号登录：",
     "emailLabel": "邮箱",
     "emailPlaceholder": "输入您的邮箱",
-    "emailInvalid": "请输入有效的邮箱地址"
+    "emailInvalid": "请输入有效的邮箱地址",
+    "loginErrorTitle": "登录失败",
+    "loginErrorDescription": "您输入的用户名或密码不正确。请再试一次。"
   },
   "CreateAccount": {
     "title": "创建一个 IT&TEA 账户",

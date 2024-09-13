@@ -45,12 +45,14 @@
     "passwordUpperCase": "Le mot de passe doit contenir une lettre majuscule",
     "passwordNumber": "Le mot de passe doit contenir un chiffre",
     "invalidPassword": "Mot de passe invalide",
-    "submit": "Soumettre",
+    "login": "Connexion",
     "register": "Créer un compte",
     "socialLabel": "Utilisez votre compte social pour vous connecter :",
     "emailLabel": "E-mail",
     "emailPlaceholder": "Entrez votre e-mail",
-    "emailInvalid": "Veuillez entrer une adresse e-mail valide"
+    "emailInvalid": "Veuillez entrer une adresse e-mail valide",
+    "loginErrorTitle": "Échec de la Connexion",
+    "loginErrorDescription": "Le nom d'utilisateur ou le mot de passe est incorrect. Veuillez réessayer."
   },
   "CreateAccount": {
     "title": "Créez un compte IT&TEA",

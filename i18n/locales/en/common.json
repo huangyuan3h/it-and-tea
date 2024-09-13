@@ -45,12 +45,14 @@
     "passwordUpperCase": "Password must contain an uppercase letter",
     "passwordNumber": "Password must contain a number",
     "invalidPassword": "Password is not valid",
-    "submit": "Submit",
+    "login": "Login",
     "register": "Register an account",
     "socialLabel": "Use your social account to login:",
     "emailLabel": "Email",
     "emailPlaceholder": "Enter your Email",
-    "emailInvalid": "Please enter a valid email address"
+    "emailInvalid": "Please enter a valid email address",
+    "loginErrorTitle": "Login Failed",
+    "loginErrorDescription": "The username or password you entered is incorrect. Please try again."
   },
   "CreateAccount": {
     "title": "Create an IT&TEA account",
