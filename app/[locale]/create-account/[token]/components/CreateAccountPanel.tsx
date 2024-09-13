@@ -60,7 +60,6 @@ type FormSchema = {
   email: ZodSchema;
   name: ZodSchema;
   password: ZodSchema;
-  confirmPassword: ZodSchema;
 };
 
 type CreateFormType = {
@@ -74,7 +73,16 @@ const CreateAccountPanel: React.FC<CreateAccountPanelProps> = ({
   token,
 }: CreateAccountPanelProps) => {
   const t = useTranslations("CreateAccount");
-  const createAccountSchema = useRef<FormSchema>();
+  const createAccountSchema = {
+    email: z.string().email(t("emailInvalid")),
+    name: z.string().min(6, t("nameMinLength")),
+    password: z
+      .string()
+      .min(6, t("passwordMinLength"))
+      .regex(/[a-z]/, t("passwordLowerCase"))
+      .regex(/[A-Z]/, t("passwordUpperCase"))
+      .regex(/[0-9]/, t("passwordNumber")),
+  };
   const locale = useLocale();
   const router = useRouter();
   const [isExpire, setExpire] = useState(false);
@@ -107,33 +115,16 @@ const CreateAccountPanel: React.FC<CreateAccountPanelProps> = ({
     if (data && !isLoading) {
       setForm({ ...form, email: data.email });
     }
-  }, [data, isLoading, locale, router, form]);
-
-  useEffect(() => {
-    createAccountSchema.current = {
-      email: z.string().email(t("emailInvalid")),
-      name: z.string().min(6, t("nameMinLength")),
-      password: z
-        .string()
-        .min(6, t("passwordMinLength"))
-        .regex(/[a-z]/, t("passwordLowerCase"))
-        .regex(/[A-Z]/, t("passwordUpperCase"))
-        .regex(/[0-9]/, t("passwordNumber")),
-      confirmPassword: z.literal(form.password, {
-        errorMap: () => ({ message: t("passwordMismatch") }),
-      }),
-    };
-  }, [form.password]);
+  }, [data, isLoading, locale, router]);
 
   const handleChange = (key: string, val: string) => {
     setForm({ ...form, [key]: val });
   };
 
   const handleBlur = (key: string) => {
-    if (!createAccountSchema.current) return;
-
-    const formSchema = createAccountSchema.current;
+    const formSchema = createAccountSchema;
     const targetSchema = formSchema[key as keyof FormSchema];
+    if (!targetSchema) return;
 
     const { success, data, error } = targetSchema.safeParse(
       form[key as keyof FormSchema]
@@ -175,7 +166,7 @@ const CreateAccountPanel: React.FC<CreateAccountPanelProps> = ({
 
       setTimeout(() => {
         router.push(`/${locale}/`);
-      }, 30000);
+      }, 3000);
     }
   };
 
@@ -224,6 +215,8 @@ const CreateAccountPanel: React.FC<CreateAccountPanelProps> = ({
           componentKey="email"
           type="email"
           isValid
+          label={t("emailLabel")}
+          placeholder={""}
         />
 
         <InputArea
@@ -234,6 +227,8 @@ const CreateAccountPanel: React.FC<CreateAccountPanelProps> = ({
           maxLength={50}
           onChange={handleChange}
           onBlur={handleBlur}
+          label={t("nameLabel")}
+          placeholder={t("namePlaceholder")}
         />
         <InputArea
           value={form.password}
@@ -244,16 +239,20 @@ const CreateAccountPanel: React.FC<CreateAccountPanelProps> = ({
           maxLength={20}
           onChange={handleChange}
           onBlur={handleBlur}
+          label={t("passwordLabel")}
+          placeholder={t("passwordPlaceholder")}
         />
         <InputArea
           value={form.confirmPassword}
           componentKey="confirmPassword"
           type="password"
-          isValid={errorMessages["confirmPassword"] === ""}
-          errorMessage={errorMessages["confirmPassword"]}
+          isValid={form.password === form.confirmPassword}
+          errorMessage={t("passwordMismatch")}
           maxLength={20}
           onChange={handleChange}
           onBlur={handleBlur}
+          label={t("confirmPasswordLabel")}
+          placeholder={t("confirmPasswordPlaceholder")}
         />
         <Button
           className="w-full mt-6"

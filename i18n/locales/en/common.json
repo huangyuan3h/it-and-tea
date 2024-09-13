@@ -60,7 +60,7 @@
     "confirmPasswordLabel": "Confirm Password",
     "confirmPasswordPlaceholder": "Re-enter your password",
     "emailInvalid": "Please enter a valid email address",
-    "nameMinLength": "Name must be at least 4 characters",
+    "nameMinLength": "Name must be at least 6 characters",
     "nameMaxLength": "Name cannot exceed 50 characters",
     "passwordMinLength": "Password must be at least 6 characters",
     "passwordMaxLength": "Password cannot exceed 20 characters",

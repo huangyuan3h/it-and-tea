@@ -59,7 +59,7 @@
     "confirmPasswordLabel": "确认密码",
     "confirmPasswordPlaceholder": "请再次输入您的密码",
     "emailInvalid": "请输入有效的邮箱地址",
-    "nameMinLength": "用户名必须至少有4个字符",
+    "nameMinLength": "用户名必须至少有6个字符",
     "nameMaxLength": "用户名不能超过50个字符",
     "passwordMinLength": "密码必须至少有6个字符",
     "passwordMaxLength": "密码不能超过20个字符",

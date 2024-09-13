@@ -59,7 +59,7 @@
     "confirmPasswordLabel": "Confirmer le mot de passe",
     "confirmPasswordPlaceholder": "Entrez à nouveau votre mot de passe",
     "emailInvalid": "Veuillez entrer une adresse e-mail valide",
-    "nameMinLength": "Le nom doit comporter au moins 4 caractères",
+    "nameMinLength": "Le nom doit comporter au moins 6 caractères",
     "nameMaxLength": "Le nom ne peut pas dépasser 50 caractères",
     "passwordMinLength": "Le mot de passe doit comporter au moins 6 caractères",
     "passwordMaxLength": "Le mot de passe ne peut pas dépasser 20 caractères",
