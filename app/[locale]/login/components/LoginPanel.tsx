@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
 import { useTranslations, useLocale } from "next-intl";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
@@ -17,7 +18,6 @@ import {
 import { Label } from "@/components/ui/label";
 import { mutate } from "swr";
 import APIClient from "@/utils/apiClient";
-import InputArea from "@/components/form/InputArea";
 
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -31,16 +31,40 @@ const submitEmail = async (email: string, locale: string) => {
   return response;
 };
 
-const EmailForm: React.FC = () => {
+type LoginFormType = {
+  email: string;
+
+  password: string;
+};
+
+const LoginForm: React.FC = () => {
   const [email, setEmail] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+  const [isValid, setIsValid] = useState<boolean>(true);
   const [loading, setLoading] = useState<boolean>(false);
   const [emailSent, setEmailSent] = useState(false);
-  const t = useTranslations("Register");
+  const t = useTranslations("Login");
   const locale = useLocale();
   const router = useRouter();
 
-  const handleEmailChange = (val: string) => {
-    setEmail(val);
+  const [form, setForm] = useState<LoginFormType>({
+    email: "",
+    password: "",
+  });
+
+  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const currentEmail = e.target.value;
+    setEmail(currentEmail);
+  };
+  const handlePasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const currentPassword = e.target.value;
+    setPassword(currentPassword);
+  };
+
+  const handleInputBlur = () => {
+    if (email.length === 0 || !emailRegex.test(email)) {
+      setIsValid(false);
+    }
   };
 
   const handleSubmit = async () => {
@@ -64,36 +88,37 @@ const EmailForm: React.FC = () => {
     }
   }, [emailSent, router]);
 
-  const handleClickLogin = () => {
-    router.push("login");
+  const handleClickRegister = () => {
+    router.push("register");
   };
 
   return (
     <Card className="w-[480px]">
       <CardHeader>
         <CardTitle>{t("title")}</CardTitle>
-        <CardDescription>{t("onboard")}</CardDescription>
+        <CardDescription>{t("description")}</CardDescription>
       </CardHeader>
       <CardContent>
-        {emailSent && (
-          <Alert className="mb-4">
-            <AlertTitle>{t("emailAlertTitle")}</AlertTitle>
-            <AlertDescription>{t("emailAlertDescription")}</AlertDescription>
-          </Alert>
-        )}
         <div className="grid w-full items-center gap-1.5">
-          <InputArea
-            label={t("email")}
-            value={email}
-            placeholder={t("registerPlaceholder")}
-            componentKey={"email"}
-            type={"email"}
-            disabled={emailSent}
-            isValid={emailRegex.test(email)}
-            errorMessage={t("invalidEmail")}
-            maxLength={100}
-            onChange={(_: string, val: string) => handleEmailChange(val)}
-          />
+          <div className="mt-2">
+            <Label htmlFor="email">{t("password")}</Label>
+            <Input
+              type="password"
+              placeholder={t("passwordPlaceholder")}
+              value={password}
+              onChange={handlePasswordChange}
+              onBlur={handleInputBlur}
+              disabled={emailSent}
+              className={`w-full ${
+                !isValid && !emailRegex.test(email)
+                  ? "!ring-1 !ring-red-500 !ring-offset-0"
+                  : ""
+              }`}
+            />
+            {!isValid && !emailRegex.test(email) && (
+              <div className="text-red-500 text-xs">{t("invalidEmail")}</div>
+            )}
+          </div>
           <Button
             className="w-full mt-2"
             type="button"
@@ -104,23 +129,23 @@ const EmailForm: React.FC = () => {
 
             {t("submit")}
           </Button>
+          <Button
+            className="w-full mt-2"
+            type="button"
+            variant={"link"}
+            onClick={handleClickRegister}
+          >
+            {t("register")}
+          </Button>
         </div>
 
         <Separator className="mt-4" />
         <div className="mt-2">
-          <Label> {t("loginLabel")}</Label>
-          <Button
-            variant="secondary"
-            className="w-full mt-2"
-            type="button"
-            onClick={handleClickLogin}
-          >
-            {t("login")}
-          </Button>
+          <Label> {t("socialLabel")}</Label>
         </div>
       </CardContent>
     </Card>
   );
 };
 
-export default EmailForm;
+export default LoginForm;

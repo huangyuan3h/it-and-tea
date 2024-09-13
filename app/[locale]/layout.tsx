@@ -9,13 +9,18 @@ import { locales } from "@/i18n";
 import { unstable_setRequestLocale } from "next-intl/server";
 import { Toaster } from "@/components/ui/sonner";
 import { DOMAIN_URL } from "@/config/domain";
+import { UserProvider } from "@/components/user-context";
 
 const fontSans = FontSans({
   subsets: ["latin"],
   variable: "--font-sans",
 });
 
-export async function generateMetadata({ params: { locale } }) {
+export async function generateMetadata({
+  params: { locale },
+}: {
+  params: { locale: string };
+}) {
   const t = await getTranslations({ locale, namespace: "HomePage" });
 
   const metadata: Metadata = {
@@ -58,7 +63,7 @@ export default async function RootLayout({
         )}
       >
         <NextIntlClientProvider messages={messages}>
-          {children}
+          <UserProvider>{children}</UserProvider>
           <Toaster />
         </NextIntlClientProvider>
       </body>

@@ -2,7 +2,6 @@
 
 import * as React from "react";
 
-import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
@@ -26,7 +25,6 @@ const LanguageSelector: React.FC = () => {
 
   const handleChange = (l: string) => {
     const newUrl = window.location.href.replace(locale, l);
-    console.log(newUrl);
     router.push(newUrl);
   };
 

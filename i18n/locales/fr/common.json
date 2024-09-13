@@ -32,6 +32,18 @@
     "emailAlertTitle": "E-mail envoyé avec succès",
     "emailAlertDescription": "Un e-mail d'inscription a été envoyé à votre boîte de réception. Veuillez cliquer sur le lien d'invitation pour continuer !"
   },
+  "Login": {
+    "title": "S'inscrire",
+    "onboard": "Inscrivez-vous à IT&TEA",
+    "email": "E-mail",
+    "invalidEmail": "L'e-mail n'est pas valide",
+    "registerPlaceholder": "Entrez votre e-mail",
+    "submit": "Soumettre",
+    "loginLabel": "Vous avez déjà un compte ?",
+    "login": "Connexion",
+    "emailAlertTitle": "E-mail envoyé avec succès",
+    "emailAlertDescription": "Un e-mail d'inscription a été envoyé à votre boîte de réception. Veuillez cliquer sur le lien d'invitation pour continuer !"
+  },
   "CreateAccount": {
     "title": "Créez un compte IT&TEA",
     "description": "Une dernière étape avant de commencer votre essai gratuit.",

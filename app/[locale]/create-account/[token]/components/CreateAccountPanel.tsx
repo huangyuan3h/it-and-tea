@@ -18,7 +18,7 @@ import {
 } from "@/components/ui/card";
 import useSWR, { mutate } from "swr";
 import APIClient from "@/utils/apiClient";
-import InputArea from "./InputArea";
+import InputArea from "../../../../../components/form/InputArea";
 import { z, ZodSchema } from "zod";
 
 const getToken = async (token: string) => {

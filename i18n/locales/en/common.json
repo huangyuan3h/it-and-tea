@@ -32,6 +32,19 @@
     "emailAlertTitle": "Email Sent Successfully",
     "emailAlertDescription": "A registration email has been sent to your mailbox. Please click the invitation link to continue!"
   },
+  "Login": {
+    "title": "Login",
+    "description": "Login to IT&TEA",
+    "email": "Email",
+    "registerPlaceholder": "Enter your email",
+    "invalidEmail": "Email is not valid",
+    "password": "Password",
+    "passwordPlaceholder": "Enter your Password",
+    "invalidPassword": "Password is not valid",
+    "submit": "Submit",
+    "register": "Register an account",
+    "socialLabel": "Use your social account to login:"
+  },
   "CreateAccount": {
     "title": "Create an IT&TEA account",
     "description": "One last step before starting your free trial.",

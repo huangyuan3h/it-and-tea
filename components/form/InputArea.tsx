@@ -2,11 +2,12 @@
 
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
-import { useTranslations } from "next-intl";
-import { HTMLInputTypeAttribute, useEffect } from "react";
+import { HTMLInputTypeAttribute, useState } from "react";
 
 export interface InputAreaProps {
+  label: string;
   value: string;
+  placeholder: string;
   componentKey: string;
   type?: HTMLInputTypeAttribute;
   disabled?: boolean;
@@ -18,7 +19,9 @@ export interface InputAreaProps {
 }
 
 const InputArea: React.FC<InputAreaProps> = ({
+  label,
   value,
+  placeholder,
   componentKey,
   type = "text",
   disabled,
@@ -28,8 +31,7 @@ const InputArea: React.FC<InputAreaProps> = ({
   onChange,
   onBlur,
 }: InputAreaProps) => {
-  const t = useTranslations("CreateAccount");
-
+  const [hasBlur, setHasBlur] = useState(false);
   const handleValueChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
     const currentValue = e.target.value;
@@ -39,27 +41,32 @@ const InputArea: React.FC<InputAreaProps> = ({
   };
 
   const handleBlur = () => {
+    setHasBlur(true);
     if (onBlur) {
       onBlur(componentKey);
     }
   };
 
+  const componentShowError = !isValid && value.length > 0 && hasBlur;
+
   return (
     <div className="grid w-full items-center gap-1.5 mt-4">
-      <Label htmlFor={componentKey}>{t(componentKey + "Label")}</Label>
+      <Label htmlFor={componentKey}>{label}</Label>
       <Input
         type={type}
-        placeholder={t(componentKey + "Placeholder")}
+        placeholder={placeholder}
         value={value}
         onChange={handleValueChange}
         onBlur={handleBlur}
         disabled={disabled}
         maxLength={maxLength}
         className={`w-full ${
-          !isValid ? "!ring-1 !ring-red-500 !ring-offset-0" : ""
+          componentShowError ? "!ring-1 !ring-red-500 !ring-offset-0" : ""
         }`}
       />
-      {!isValid && <div className="text-red-500 text-xs">{errorMessage}</div>}
+      {componentShowError && (
+        <div className="text-red-500 text-xs">{errorMessage}</div>
+      )}
     </div>
   );
 };

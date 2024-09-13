@@ -1,6 +1,7 @@
 import Link from "next/link";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+
 import LanguageSelector from "./LanguageSelector";
+import Avatar from "./Avatar";
 
 export const Header: React.FC = () => {
   return (
@@ -11,10 +12,7 @@ export const Header: React.FC = () => {
         </Link>
         <div className="flex gap-x-4">
           <LanguageSelector />
-          <Avatar className="cursor-pointer">
-            <AvatarImage src={"/svgs/user.svg"} />
-            <AvatarFallback>User</AvatarFallback>
-          </Avatar>
+          <Avatar />
         </div>
       </div>
     </header>
