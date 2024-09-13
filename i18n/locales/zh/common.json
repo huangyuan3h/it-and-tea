@@ -68,8 +68,8 @@
     "passwordNumber": "密码必须包含数字",
     "passwordMismatch": "与密码不相同",
     "createAccount": "创建账户",
-    "accountCreationSuccessTitle": "账号已成功创建",
-    "accountCreationSuccessDescription": "您的 IT&TEA 账号已成功创建，并且已登录系统，您可以开始您的商业活动。",
+    "accountCreationSuccessTitle": "账户已创建",
+    "accountCreationSuccessDescription": "您的 IT&TEA 账户已准备好。开始您的业务活动吧。",
     "returnToHomepage": "返回首页"
   }
 }
