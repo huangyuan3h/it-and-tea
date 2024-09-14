@@ -19,9 +19,7 @@ import { mutate } from "swr";
 import APIClient from "@/utils/apiClient";
 import InputArea from "@/components/form/InputArea";
 import { toast } from "sonner";
-import { setCookie } from "nookies";
-
-const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+import { SocialLogin } from "./SocialLogin";
 
 type LoginFormType = {
   email: string;
@@ -76,12 +74,7 @@ const LoginForm: React.FC = () => {
         revalidate: false,
       });
       if (result.Authorization !== "") {
-        // set cookies
-        setCookie(null, "Authorization", result.Authorization);
-
-        setTimeout(() => {
-          router.push(`/${locale}/`);
-        }, 3000);
+        router.push(`/${locale}/`);
       }
     } catch (err) {
       toast(t("loginErrorTitle"), {
@@ -182,6 +175,7 @@ const LoginForm: React.FC = () => {
         <Separator className="mt-4" />
         <div className="mt-2">
           <Label> {t("socialLabel")}</Label>
+          <SocialLogin />
         </div>
       </CardContent>
     </Card>

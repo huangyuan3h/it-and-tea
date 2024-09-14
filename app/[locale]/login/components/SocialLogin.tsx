@@ -1,56 +1,59 @@
-import APIClient from '@/utils/apiClient';
-import { decodeJWT } from '@/utils/auth';
-import { toastMessages } from '@/utils/toastMessage';
+import APIClient from "@/utils/apiClient";
+
 import {
   CredentialResponse,
   GoogleLogin,
   GoogleOAuthProvider,
-} from '@react-oauth/google';
-import { setCookie } from 'nookies';
-import { toast } from 'react-toastify';
-import { useUser } from '../user-context';
+} from "@react-oauth/google";
 
-export interface SocialLoginProps {
-  onHide: () => void;
-}
+import { useLocale, useTranslations } from "next-intl";
+import { useRouter } from "next/navigation";
+import { toast } from "sonner";
 
-export const SocialLogin: React.FC<SocialLoginProps> = ({
-  onHide,
-}: SocialLoginProps) => {
-  const { updateUser } = useUser();
+export interface SocialLoginProps {}
+
+export const SocialLogin: React.FC<
+  SocialLoginProps
+> = ({}: SocialLoginProps) => {
+  const router = useRouter();
+  const locale = useLocale();
+  const t = useTranslations("Login");
   const handleGoogleLoginSuccess = async (
     credentialResponse: CredentialResponse
   ) => {
     const client = new APIClient();
-    const response = await toast.promise(
-      client.post('auth/login/google', {
+    await toast.promise(
+      client.post("google-login", {
         credential: credentialResponse.credential,
       }),
       {
-        success: toastMessages.LOGIN_SUCCESS,
-        pending: toastMessages.LOADING,
-        error: toastMessages.REQUEST_ERROR,
-      },
-      {
-        position: 'top-center',
+        loading: t("googleLoginLoading"),
+        success: (data) => {
+          router.push(`/${locale}/`);
+          return t("googleLoginSuccess");
+        },
+        error: "Error",
       }
     );
-    if (response.Authorization) {
-      setCookie(null, 'Authorization', response.Authorization);
-      updateUser(decodeJWT(response.Authorization));
-      onHide();
-    }
+  };
+
+  const handleError = () => {
+    toast(t("loginErrorTitle"), {
+      description: t("googleLoginErrorDescription"),
+    });
   };
 
   return (
-    <GoogleOAuthProvider
-      clientId={`${process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID}`}
-    >
-      <GoogleLogin
-        onSuccess={handleGoogleLoginSuccess}
-        onError={() => toast.error(toastMessages.REQUEST_ERROR)}
-        useOneTap
-      />
-    </GoogleOAuthProvider>
+    <div className="mt-4">
+      <GoogleOAuthProvider
+        clientId={`${process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID}`}
+      >
+        <GoogleLogin
+          onSuccess={handleGoogleLoginSuccess}
+          onError={handleError}
+          useOneTap
+        />
+      </GoogleOAuthProvider>
+    </div>
   );
 };

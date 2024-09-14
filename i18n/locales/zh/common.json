@@ -52,7 +52,10 @@
     "emailPlaceholder": "输入您的邮箱",
     "emailInvalid": "请输入有效的邮箱地址",
     "loginErrorTitle": "登录失败",
-    "loginErrorDescription": "您输入的用户名或密码不正确。请再试一次。"
+    "loginErrorDescription": "您输入的用户名或密码不正确。请再试一次。",
+    "googleLoginErrorDescription": "谷歌服务不可用，请重试。",
+    "googleLoginLoading": "登陆中...",
+    "googleLoginSuccess": "谷歌登录成功。"
   },
   "CreateAccount": {
     "title": "创建一个 IT&TEA 账户",

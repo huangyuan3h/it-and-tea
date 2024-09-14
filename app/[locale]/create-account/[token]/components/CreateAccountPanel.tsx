@@ -7,7 +7,6 @@ import { toast } from "sonner";
 
 import { useTranslations, useLocale } from "next-intl";
 import { useRouter } from "next/navigation";
-import { setCookie } from "nookies";
 
 import {
   Card,
@@ -153,9 +152,6 @@ const CreateAccountPanel: React.FC<CreateAccountPanelProps> = ({
       }
     );
     if (result.Authorization !== "") {
-      // set cookies
-      setCookie(null, "Authorization", result.Authorization);
-
       toast(t("accountCreationSuccessTitle"), {
         description: t("accountCreationSuccessDescription"),
         action: {

@@ -52,7 +52,10 @@
     "emailPlaceholder": "Entrez votre e-mail",
     "emailInvalid": "Veuillez entrer une adresse e-mail valide",
     "loginErrorTitle": "Échec de la Connexion",
-    "loginErrorDescription": "Le nom d'utilisateur ou le mot de passe est incorrect. Veuillez réessayer."
+    "loginErrorDescription": "Le nom d'utilisateur ou le mot de passe est incorrect. Veuillez réessayer.",
+    "googleLoginErrorDescription": "Le service Google n’est pas disponible, veuillez réessayer.",
+    "googleLoginLoading": "Connexion en cours...",
+    "googleLoginSuccess": "Connexion Google réussie."
   },
   "CreateAccount": {
     "title": "Créez un compte IT&TEA",

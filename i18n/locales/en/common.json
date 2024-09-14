@@ -52,7 +52,10 @@
     "emailPlaceholder": "Enter your Email",
     "emailInvalid": "Please enter a valid email address",
     "loginErrorTitle": "Login Failed",
-    "loginErrorDescription": "The username or password you entered is incorrect. Please try again."
+    "loginErrorDescription": "The username or password you entered is incorrect. Please try again.",
+    "googleLoginErrorDescription": "google service is not available, please try again.",
+    "googleLoginLoading": "Logging in...",
+    "googleLoginSuccess": "Google login successful"
   },
   "CreateAccount": {
     "title": "Create an IT&TEA account",
