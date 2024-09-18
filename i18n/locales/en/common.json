@@ -18,7 +18,10 @@
     },
     "welcome": "Welcome",
     "description": "This is an example description",
-    "speech": "Hello, welcome to IT and tea"
+    "speech": "Hello, welcome to IT and tea",
+    "northPathTitle": "North Path",
+    "northPathSubtitle": "Guide for Chinese Immigrants to Canada",
+    "northPathDescription": "North Path is designed for Chinese immigrants, offering comprehensive information on immigration, studying abroad, and living in Canada. We cover practical topics such as visa applications, housing, and employment, while also providing the latest news and entertainment updates to help you integrate smoothly into Canadian life."
   },
   "Register": {
     "title": "Register",

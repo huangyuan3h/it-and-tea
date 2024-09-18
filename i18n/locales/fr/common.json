@@ -18,7 +18,10 @@
     },
     "welcome": "fr",
     "description": "fr description",
-    "speech": "Bonjour, bienvenue chez IT and Tea."
+    "speech": "Bonjour, bienvenue chez IT and Tea.",
+    "northPathTitle": "North Path",
+    "northPathSubtitle": "Guide pour les nouveaux immigrants chinois au Canada",
+    "northPathDescription": "North Path est conçu pour les immigrants chinois, offrant des informations complètes sur l'immigration, les études à l'étranger et la vie au Canada. Nous couvrons des sujets pratiques tels que les demandes de visa, le logement et l'emploi, tout en fournissant les dernières actualités et divertissements pour vous aider à vous intégrer facilement à la vie canadienne."
   },
   "Register": {
     "title": "S'inscrire",

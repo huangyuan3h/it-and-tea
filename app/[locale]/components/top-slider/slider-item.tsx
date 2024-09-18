@@ -4,19 +4,25 @@ import Image from "next/image";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { useWindowWidth } from "@/utils/hooks/useWindowWidth";
 import { breakpoints } from "@/utils/breakpoint";
+import { useEffect, useState } from "react";
 
 export interface SliderItemProps {
-  href: string;
   src: string;
   alt: string;
+  children?: React.ReactElement;
 }
 
 export const SliderItem: React.FC<SliderItemProps> = ({
-  href,
   src,
   alt,
+  children,
 }: SliderItemProps) => {
   const windowWidth = useWindowWidth();
+  const [ratio, setRatio] = useState(9 / 9);
+
+  useEffect(() => {
+    setRatio(getAspectRatio());
+  }, [windowWidth]);
 
   const getAspectRatio = () => {
     if (windowWidth >= breakpoints.lg) {
@@ -34,16 +40,21 @@ export const SliderItem: React.FC<SliderItemProps> = ({
   };
 
   return (
-    <Link href={href}>
-      <AspectRatio ratio={getAspectRatio()} className="bg-muted">
+    <div className="relative">
+      <AspectRatio
+        ratio={ratio}
+        className="bg-muted"
+        style={{ maxHeight: "780px" }}
+      >
         <Image
           src={src}
-          alt="alt"
+          alt={alt}
           fill
           className="h-full w-full object-cover"
           style={{ objectFit: "cover", objectPosition: "center" }}
         />
       </AspectRatio>
-    </Link>
+      {children}
+    </div>
   );
 };
