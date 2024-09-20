@@ -16,6 +16,14 @@
         "it_services": "IT services"
       }
     },
+    "tts": {
+      "cardTitle": "Welcome to IT and Tea's Advanced TTS Solution",
+      "cardDescription": "Experience our cutting-edge text-to-speech technology",
+      "labelText": "Enter your text:",
+      "textareaPlaceholder": "Type text for speech synthesis",
+      "textareaValue": "Welcome to IT and Tea's TTS platform!",
+      "buttonText": "Synthesize Speech"
+    },
     "welcome": "Welcome",
     "description": "This is an example description",
     "speech": "Hello, welcome to IT and tea",

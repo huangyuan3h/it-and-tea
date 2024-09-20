@@ -16,6 +16,14 @@
         "it_services": "IT服务"
       }
     },
+    "tts": {
+      "cardTitle": "欢迎体验 IT and Tea 的先进 TTS 解决方案",
+      "cardDescription": "体验我们的尖端文本转语音技术",
+      "labelText": "输入你的文本：",
+      "textareaPlaceholder": "输入文本进行语音合成",
+      "textareaValue": "欢迎使用 IT and Tea 的 TTS 平台！",
+      "buttonText": "合成语音"
+    },
     "welcome": "zh",
     "description": "zh description",
     "speech": "你好！ 欢迎来到 IT and tea",

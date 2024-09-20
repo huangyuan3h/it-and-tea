@@ -16,6 +16,14 @@
         "it_services": "services informatiques"
       }
     },
+    "tts": {
+      "cardTitle": "Bienvenue à la solution TTS avancée de IT and Tea",
+      "cardDescription": "Découvrez notre technologie de synthèse vocale de pointe",
+      "labelText": "Saisissez votre texte :",
+      "textareaPlaceholder": "Saisissez le texte pour la synthèse vocale",
+      "textareaValue": "Bienvenue sur la plateforme TTS de IT and Tea !",
+      "buttonText": "Synthétiser la voix"
+    },
     "welcome": "fr",
     "description": "fr description",
     "speech": "Bonjour, bienvenue chez IT and Tea.",
