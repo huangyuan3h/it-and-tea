@@ -24,6 +24,11 @@
       "textareaValue": "Bienvenue sur la plateforme TTS de IT and Tea ! Expérimentez avec différentes entrées de texte pour entendre comment elles affectent la parole synthétisée.",
       "buttonText": "Synthétiser la voix"
     },
+    "hero": {
+      "title": "Bienvenue à IT&TEA",
+      "description": "IT&TEA fournit des solutions logicielles avancées ainsi que des solutions d’intelligence artificielle.",
+      "button": "En savoir plus"
+    },
     "welcome": "fr",
     "description": "fr description",
     "speech": "Bonjour, bienvenue chez IT and Tea.",

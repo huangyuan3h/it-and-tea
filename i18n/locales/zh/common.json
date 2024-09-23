@@ -24,6 +24,11 @@
       "textareaValue": "欢迎使用 IT and Tea 的 TTS 平台！尝试修改文本，体验不同文本输入对语音合成的影响。",
       "buttonText": "合成语音"
     },
+    "hero": {
+      "title": "欢迎来到IT&TEA",
+      "description": "IT&TEA 提供先进的软件解决方案以及 AI 解决方案",
+      "button": "了解更多"
+    },
     "welcome": "zh",
     "description": "zh description",
     "speech": "你好！ 欢迎来到 IT and tea",

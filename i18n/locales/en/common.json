@@ -24,6 +24,11 @@
       "textareaValue": "Welcome to IT and Tea's TTS platform! Experiment with different text inputs to hear how they affect the synthesized speech.",
       "buttonText": "Synthesize Speech"
     },
+    "hero": {
+      "title": "Welcome to IT&TEA",
+      "description": "IT&TEA provides advanced software and AI solutions",
+      "button": "Learn More"
+    },
     "welcome": "Welcome",
     "description": "This is an example description",
     "speech": "Hello, welcome to IT and tea",
