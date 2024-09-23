@@ -21,7 +21,7 @@
       "cardDescription": "Experience our cutting-edge text-to-speech technology",
       "labelText": "Enter your text:",
       "textareaPlaceholder": "Type text for speech synthesis",
-      "textareaValue": "Welcome to IT and Tea's TTS platform!",
+      "textareaValue": "Welcome to IT and Tea's TTS platform! Experiment with different text inputs to hear how they affect the synthesized speech.",
       "buttonText": "Synthesize Speech"
     },
     "welcome": "Welcome",

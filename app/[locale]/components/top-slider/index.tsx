@@ -50,11 +50,11 @@ export const TopSlider: React.FC<{}> = () => {
         loop: true,
       }}
       setApi={setApi}
-      //   plugins={[
-      //     Autoplay({
-      //       delay: 4000,
-      //     }),
-      //   ]}
+      plugins={[
+        Autoplay({
+          delay: 4000,
+        }),
+      ]}
     >
       <CarouselContent>
         <CarouselItem>

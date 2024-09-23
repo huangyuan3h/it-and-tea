@@ -21,7 +21,7 @@
       "cardDescription": "体验我们的尖端文本转语音技术",
       "labelText": "输入你的文本：",
       "textareaPlaceholder": "输入文本进行语音合成",
-      "textareaValue": "欢迎使用 IT and Tea 的 TTS 平台！",
+      "textareaValue": "欢迎使用 IT and Tea 的 TTS 平台！尝试修改文本，体验不同文本输入对语音合成的影响。",
       "buttonText": "合成语音"
     },
     "welcome": "zh",

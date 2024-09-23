@@ -21,7 +21,7 @@
       "cardDescription": "Découvrez notre technologie de synthèse vocale de pointe",
       "labelText": "Saisissez votre texte :",
       "textareaPlaceholder": "Saisissez le texte pour la synthèse vocale",
-      "textareaValue": "Bienvenue sur la plateforme TTS de IT and Tea !",
+      "textareaValue": "Bienvenue sur la plateforme TTS de IT and Tea ! Expérimentez avec différentes entrées de texte pour entendre comment elles affectent la parole synthétisée.",
       "buttonText": "Synthétiser la voix"
     },
     "welcome": "fr",
