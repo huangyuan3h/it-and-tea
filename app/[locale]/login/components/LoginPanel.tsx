@@ -119,7 +119,7 @@ const LoginForm: React.FC = () => {
   };
 
   return (
-    <Card className="w-[480px]">
+    <Card className="w-[480px] max-md:rounded-none max-md:w-[768px] max-md:h-screen">
       <CardHeader>
         <CardTitle>{t("title")}</CardTitle>
         <CardDescription>{t("description")}</CardDescription>
