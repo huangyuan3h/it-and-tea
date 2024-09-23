@@ -71,7 +71,7 @@ export const Text2Speech: React.FC = () => {
 
   const handleButtonClick = async () => {
     if (isSameAsInitial) {
-      setAudioUrl(voiceDefaultURL[locale]);
+      setAudioUrl(voiceDefaultURL[locale] + "?t=" + new Date().getTime());
       return;
     }
 
@@ -94,7 +94,7 @@ export const Text2Speech: React.FC = () => {
       }
 
       const data: AudioResponse = await response.json();
-      setAudioUrl(data.url);
+      setAudioUrl(data.url + "?t=" + new Date().getTime());
       setLoading(false);
     } catch (error) {
       console.error("Error fetching audio:", error);
