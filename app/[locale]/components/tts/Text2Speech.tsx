@@ -14,6 +14,7 @@ import { useLocale, useTranslations } from "next-intl";
 import { useEffect, useRef, useState } from "react";
 import { locales } from "@/i18n";
 import { Loader2, Play } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 interface AudioResponse {
   url: string;
@@ -103,7 +104,7 @@ export const Text2Speech: React.FC = () => {
 
   return (
     <div className="relative flex padding justify-center item-center">
-      <Card className="max-w-[600px] w-full my-24">
+      <Card className={cn("max-w-[600px] w-full my-24", styles.cardPhone)}>
         <CardHeader>
           <CardTitle>{t("tts.cardTitle")}</CardTitle>
           <CardDescription>{t("tts.cardDescription")}</CardDescription>
