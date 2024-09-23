@@ -11,8 +11,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { useLocale, useTranslations } from "next-intl";
-import { useState } from "react";
-import Link from "next/link";
+import { useEffect, useRef, useState } from "react";
 import { locales } from "@/i18n";
 import { Loader2, Play } from "lucide-react";
 
@@ -42,7 +41,26 @@ export const Text2Speech: React.FC = () => {
   const [isSameAsInitial, setIsSameAsInitial] = useState(true);
   const [audioUrl, setAudioUrl] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false);
   const locale = useLocale();
+
+  const audioRef = useRef<HTMLAudioElement>(null);
+
+  useEffect(() => {
+    if (audioUrl && audioRef.current) {
+      audioRef.current.play();
+      setIsPlaying(true);
+    }
+  }, [audioUrl]);
+
+  useEffect(() => {
+    const handleEnded = () => setIsPlaying(false);
+
+    if (audioRef.current) {
+      audioRef.current.addEventListener("ended", handleEnded);
+      return () => audioRef.current?.removeEventListener("ended", handleEnded);
+    }
+  }, []);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     const newValue = e.target.value;
@@ -103,24 +121,18 @@ export const Text2Speech: React.FC = () => {
           <Button
             className="mt-4"
             onClick={handleButtonClick}
-            disabled={text.length === 0 || loading}
+            disabled={text.length === 0 || loading || isPlaying}
           >
-            {loading ? (
+            {loading || isPlaying ? (
               <Loader2 className="mr-2 h-4 w-4 animate-spin" />
             ) : (
               <Play className="mr-2 h-4 w-4 " />
             )}
             {t("tts.buttonText")}
           </Button>
-          {audioUrl && (
-            <div className="mt-4">
-              <audio controls>
-                <source src={audioUrl} type="audio/mpeg" />
-              </audio>
-            </div>
-          )}
         </CardContent>
       </Card>
+      <audio ref={audioRef} src={audioUrl ?? ""} style={{ display: "none" }} />
       <div className={styles.ttsBackground}></div>
     </div>
   );
