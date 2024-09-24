@@ -1,4 +1,11 @@
 {
+  "common": {
+    "footer": {
+      "about": "About Us",
+      "contact": "Contact",
+      "privacyPolicy": "Privacy Policy"
+    }
+  },
   "HomePage": {
     "meta": {
       "title": "IT and Tea - Leading AI Solutions for Business Innovation",

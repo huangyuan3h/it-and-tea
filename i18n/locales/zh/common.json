@@ -1,4 +1,11 @@
 {
+  "common": {
+    "footer": {
+      "about": "关于我们",
+      "contact": "联系我们",
+      "privacyPolicy": "隐私政策"
+    }
+  },
   "HomePage": {
     "meta": {
       "title": "IT and Tea - 引领商业创新的AI解决方案",

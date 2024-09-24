@@ -1,4 +1,11 @@
 {
+  "common": {
+    "footer": {
+      "about": "À propos de nous",
+      "contact": "Contact",
+      "privacyPolicy": "Politique de confidentialité"
+    }
+  },
   "HomePage": {
     "meta": {
       "title": "IT and Tea - Solutions IA de pointe pour l'innovation commerciale",
