@@ -36,6 +36,10 @@
       "description": "IT&TEA provides advanced software and AI solutions",
       "button": "Learn More"
     },
+    "calloutAI": {
+      "title": "IT&TEA: Your AI Solution Architects",
+      "description": "We build and apply cutting-edge AI models, such as Natural Language Processing and Computer Vision, to craft powerful solutions that drive your business value."
+    },
     "welcome": "Welcome",
     "description": "This is an example description",
     "speech": "Hello, welcome to IT and tea",

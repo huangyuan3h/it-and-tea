@@ -36,6 +36,10 @@
       "description": "IT&TEA 提供先进的软件解决方案以及 AI 解决方案",
       "button": "了解更多"
     },
+    "calloutAI": {
+      "title": "IT&TEA：您的 AI 解决方案构建专家",
+      "description": "我们构建和应用尖端 AI 模型，例如自然语言处理和计算机视觉，为您打造强大的解决方案，驱动您的业务价值。"
+    },
     "welcome": "zh",
     "description": "zh description",
     "speech": "你好！ 欢迎来到 IT and tea",

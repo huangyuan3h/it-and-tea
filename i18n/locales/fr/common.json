@@ -36,6 +36,10 @@
       "description": "IT&TEA fournit des solutions logicielles avancées ainsi que des solutions d’intelligence artificielle.",
       "button": "En savoir plus"
     },
+    "calloutAI": {
+      "title": "IT&TEA : Vos architectes de solutions IA",
+      "description": "Nous concevons et mettons en œuvre des modèles d’IA de pointe, tels que ceux de traitement du langage naturel et de vision par ordinateur, afin de créer des solutions puissantes qui augmentent la valeur de votre entreprise."
+    },
     "welcome": "fr",
     "description": "fr description",
     "speech": "Bonjour, bienvenue chez IT and Tea.",
