@@ -3,6 +3,7 @@ import Footer from "@/components/footer";
 import { Header } from "@/components/header";
 import { locales } from "@/i18n";
 import { useLocale } from "next-intl";
+import "./policy.css";
 
 const EN: React.FC = () => {
   return (
