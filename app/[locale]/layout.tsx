@@ -41,6 +41,27 @@ export async function generateMetadata({
       t("meta.keywords.cutting_edge_technology"),
       t("meta.keywords.it_services"),
     ],
+    icons: [
+      { url: "/favicon.ico" },
+      {
+        url: "/apple-touch-icon.png",
+        rel: "apple-touch-icon",
+        sizes: "180x180",
+      },
+      {
+        url: "/favicon-32x32.png",
+        rel: "icon",
+        sizes: "32x32",
+        type: "image/png",
+      },
+      {
+        url: "/favicon-16x16.png",
+        rel: "icon",
+        sizes: "16x16",
+        type: "image/png",
+      },
+    ],
+    manifest: "/site.webmanifest",
   };
   return metadata;
 }
