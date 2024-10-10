@@ -5832,6 +5832,7 @@ __metadata:
     embla-carousel-react: "npm:^8.2.1"
     eslint: "npm:^8"
     eslint-config-next: "npm:14.2.7"
+    framer-motion: "npm:^11.11.7"
     lucide-react: "npm:^0.436.0"
     next: "npm:14.2.7"
     next-intl: "npm:^3.17.4"
@@ -6893,6 +6894,26 @@ __metadata:
   version: 0.2.0
   resolution: "forwarded@npm:0.2.0"
   checksum: 10c0/9b67c3fac86acdbc9ae47ba1ddd5f2f81526fa4c8226863ede5600a3f7c7416ef451f6f1e240a3cc32d0fd79fcfe6beb08fd0da454f360032bde70bf80afbb33
+  languageName: node
+  linkType: hard
+
+"framer-motion@npm:^11.11.7":
+  version: 11.11.7
+  resolution: "framer-motion@npm:11.11.7"
+  dependencies:
+    tslib: "npm:^2.4.0"
+  peerDependencies:
+    "@emotion/is-prop-valid": "*"
+    react: ^18.0.0
+    react-dom: ^18.0.0
+  peerDependenciesMeta:
+    "@emotion/is-prop-valid":
+      optional: true
+    react:
+      optional: true
+    react-dom:
+      optional: true
+  checksum: 10c0/3ea38038c4ff7e421c22811109ebe0aced595afcf8a204b2548c137b5d73cea983bc78d8fd2fb43406636f848bd53414eb41afb9fe182bb23afcddb2dccd98bb
   languageName: node
   linkType: hard
 

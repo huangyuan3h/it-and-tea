@@ -43,6 +43,9 @@
     "welcome": "fr",
     "description": "fr description",
     "speech": "Bonjour, bienvenue chez IT and Tea.",
+    "beforeSlider": {
+      "title": "Découvrez nos solutions innovantes ci-dessous."
+    },
     "slider": {
       "northPathTitle": "North Path",
       "northPathSubtitle": "Guide pour les nouveaux immigrants chinois au Canada",

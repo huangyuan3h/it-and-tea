@@ -7,6 +7,7 @@ import { Text2Speech } from "./components/tts/Text2Speech";
 import Hero from "./components/hero-video";
 import Footer from "@/components/footer";
 import CalloutAI from "./components/callout-ai";
+import { BeforeSlider } from "./components/before-slider";
 
 export default function Home({
   params: { locale },
@@ -21,6 +22,7 @@ export default function Home({
       <Hero />
       <CalloutAI />
       <Text2Speech />
+      <BeforeSlider />
       <TopSlider />
       <Footer />
     </main>

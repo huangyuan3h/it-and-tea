@@ -43,6 +43,9 @@
     "welcome": "zh",
     "description": "zh description",
     "speech": "你好！ 欢迎来到 IT and tea",
+    "beforeSlider": {
+      "title": "探索下方我们的创新解决方案。"
+    },
     "slider": {
       "northPathTitle": "North Path",
       "northPathSubtitle": "加拿大华人新移民指南",

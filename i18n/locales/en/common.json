@@ -43,6 +43,9 @@
     "welcome": "Welcome",
     "description": "This is an example description",
     "speech": "Hello, welcome to IT and tea",
+    "beforeSlider": {
+      "title": "Explore our innovative solutions below."
+    },
     "slider": {
       "northPathTitle": "North Path",
       "northPathSubtitle": "Guide for Chinese Immigrants to Canada",

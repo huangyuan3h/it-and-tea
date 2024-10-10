@@ -8,6 +8,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: new Date(),
       changeFrequency: "daily",
       priority: 1,
+      alternates: {
+        languages: {
+          en: `${DOMAIN_URL}\en`,
+          fr: `${DOMAIN_URL}\fr`,
+          zh: `${DOMAIN_URL}\zh`,
+        },
+      },
     },
   ];
 
