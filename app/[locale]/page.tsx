@@ -2,6 +2,11 @@
 import { Header } from "@/components/header";
 
 import { useTranslations } from "next-intl";
+import { TopSlider } from "./components/top-slider";
+import { Text2Speech } from "./components/tts/Text2Speech";
+import Hero from "./components/hero-video";
+import Footer from "@/components/footer";
+import CalloutAI from "./components/callout-ai";
 
 export default function Home({
   params: { locale },
@@ -13,10 +18,11 @@ export default function Home({
   return (
     <main>
       <Header />
-      <div className="container">
-        <h1>{t("welcome")}</h1>
-        <p>{t("description")}</p>
-      </div>
+      <Hero />
+      <CalloutAI />
+      <Text2Speech />
+      <TopSlider />
+      <Footer />
     </main>
   );
 }

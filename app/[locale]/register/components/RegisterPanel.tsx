@@ -2,7 +2,6 @@
 import React, { useEffect, useState } from "react";
 import { Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
 import { useTranslations, useLocale } from "next-intl";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
@@ -18,6 +17,7 @@ import {
 import { Label } from "@/components/ui/label";
 import { mutate } from "swr";
 import APIClient from "@/utils/apiClient";
+import InputArea from "@/components/form/InputArea";
 
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -33,22 +33,14 @@ const submitEmail = async (email: string, locale: string) => {
 
 const EmailForm: React.FC = () => {
   const [email, setEmail] = useState<string>("");
-  const [isValid, setIsValid] = useState<boolean>(true);
   const [loading, setLoading] = useState<boolean>(false);
   const [emailSent, setEmailSent] = useState(false);
   const t = useTranslations("Register");
   const locale = useLocale();
   const router = useRouter();
 
-  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const currentEmail = e.target.value;
-    setEmail(currentEmail);
-  };
-
-  const handleInputBlur = () => {
-    if (email.length === 0 || !emailRegex.test(email)) {
-      setIsValid(false);
-    }
+  const handleEmailChange = (val: string) => {
+    setEmail(val);
   };
 
   const handleSubmit = async () => {
@@ -77,7 +69,7 @@ const EmailForm: React.FC = () => {
   };
 
   return (
-    <Card className="w-[480px]">
+    <Card className="w-[480px] max-md:rounded-none max-md:w-[768px] max-md:h-screen">
       <CardHeader>
         <CardTitle>{t("title")}</CardTitle>
         <CardDescription>{t("onboard")}</CardDescription>
@@ -90,23 +82,18 @@ const EmailForm: React.FC = () => {
           </Alert>
         )}
         <div className="grid w-full items-center gap-1.5">
-          <Label htmlFor="email">{t("email")}</Label>
-          <Input
-            type="email"
-            placeholder={t("registerPlaceholder")}
+          <InputArea
+            label={t("email")}
             value={email}
-            onChange={handleEmailChange}
-            onBlur={handleInputBlur}
+            placeholder={t("registerPlaceholder")}
+            componentKey={"email"}
+            type={"email"}
             disabled={emailSent}
-            className={`w-full ${
-              !isValid && !emailRegex.test(email)
-                ? "!ring-1 !ring-red-500 !ring-offset-0"
-                : ""
-            }`}
+            isValid={emailRegex.test(email)}
+            errorMessage={t("invalidEmail")}
+            maxLength={100}
+            onChange={(_: string, val: string) => handleEmailChange(val)}
           />
-          {!isValid && !emailRegex.test(email) && (
-            <div className="text-red-500 text-xs">{t("invalidEmail")}</div>
-          )}
           <Button
             className="w-full mt-2"
             type="button"

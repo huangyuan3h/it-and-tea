@@ -1,13 +1,62 @@
 {
+  "common": {
+    "footer": {
+      "about": "关于我们",
+      "contact": "联系我们",
+      "privacyPolicy": "隐私政策"
+    }
+  },
   "HomePage": {
+    "meta": {
+      "title": "IT and Tea - 引领商业创新的AI解决方案",
+      "description": "IT and Tea是一家前沿的AI公司，致力于提供创新解决方案，推动业务增长与转型。我们的专业领域涵盖人工智能、数据分析和自动化，帮助企业在数字时代蓬勃发展。探索我们AI驱动的产品和服务，助力您的未来。",
+      "keywords": {
+        "ai_solutions": "AI解决方案",
+        "business_innovation": "商业创新",
+        "artificial_intelligence": "人工智能",
+        "data_analysis": "数据分析",
+        "automation": "自动化",
+        "ai_powered_products": "AI驱动的产品",
+        "digital_transformation": "数字化转型",
+        "ai_company": "AI公司",
+        "cutting_edge_technology": "前沿技术",
+        "it_services": "IT服务"
+      }
+    },
+    "tts": {
+      "cardTitle": "欢迎体验 IT and Tea 的先进 TTS 解决方案",
+      "cardDescription": "体验我们的尖端文本转语音技术",
+      "labelText": "输入你的文本：",
+      "textareaPlaceholder": "输入文本进行语音合成",
+      "textareaValue": "欢迎使用 IT and Tea 的 TTS 平台！尝试修改文本，体验不同文本输入对语音合成的影响。",
+      "buttonText": "合成语音"
+    },
+    "hero": {
+      "title": "欢迎来到IT&TEA",
+      "description": "IT&TEA 提供先进的软件解决方案以及 AI 解决方案",
+      "button": "了解更多"
+    },
+    "calloutAI": {
+      "title": "IT&TEA：您的 AI 解决方案构建专家",
+      "description": "我们构建和应用尖端 AI 模型，例如自然语言处理和计算机视觉，为您打造强大的解决方案，驱动您的业务价值。"
+    },
     "welcome": "zh",
     "description": "zh description",
-    "speech": "你好！ 欢迎来到 IT and tea"
+    "speech": "你好！ 欢迎来到 IT and tea",
+    "slider": {
+      "northPathTitle": "North Path",
+      "northPathSubtitle": "加拿大华人新移民指南",
+      "northPathDescription": "North Path专为中国新移民打造，提供全面的加拿大移民、留学资讯及生活指南。",
+      "northPathButton": "访问 North Path",
+      "kairosTitle": "Kairos",
+      "kairosSubtitle": "使用LSTM和Transformer的股票预测系统",
+      "kairosDescription": "时机利用先进的机器学习模型，包括LSTM和Transformer，分析股市趋势，提供准确的预测，帮助做出更好的决策。",
+      "kairosButton": "探索时机"
+    }
   },
   "Register": {
     "title": "注册",
     "onboard": "加入 IT&TEA",
-
     "email": "电子邮件",
     "registerPlaceholder": "请输入你的电子邮件",
     "invalidEmail": "电子邮件无效",
@@ -16,6 +65,31 @@
     "login": "登录",
     "emailAlertTitle": "邮件发送成功",
     "emailAlertDescription": "一封注册邮件已经发送到了你的邮箱，请点击邀请链接继续！"
+  },
+  "Login": {
+    "title": "登录",
+    "description": "登录 IT&TEA",
+    "email": "邮箱",
+    "registerPlaceholder": "输入您的邮箱",
+    "invalidEmail": "邮箱格式无效",
+    "passwordLabel": "密码",
+    "passwordPlaceholder": "输入您的密码",
+    "passwordMinLength": "密码至少需要6个字符",
+    "passwordLowerCase": "密码必须包含一个小写字母",
+    "passwordUpperCase": "密码必须包含一个大写字母",
+    "passwordNumber": "密码必须包含一个数字",
+    "invalidPassword": "密码无效",
+    "login": "登陆",
+    "register": "注册账户",
+    "socialLabel": "使用社交账号登录：",
+    "emailLabel": "邮箱",
+    "emailPlaceholder": "输入您的邮箱",
+    "emailInvalid": "请输入有效的邮箱地址",
+    "loginErrorTitle": "登录失败",
+    "loginErrorDescription": "您输入的用户名或密码不正确。请再试一次。",
+    "googleLoginErrorDescription": "谷歌服务不可用，请重试。",
+    "googleLoginLoading": "登陆中...",
+    "googleLoginSuccess": "谷歌登录成功。"
   },
   "CreateAccount": {
     "title": "创建一个 IT&TEA 账户",
@@ -32,7 +106,7 @@
     "confirmPasswordLabel": "确认密码",
     "confirmPasswordPlaceholder": "请再次输入您的密码",
     "emailInvalid": "请输入有效的邮箱地址",
-    "nameMinLength": "用户名必须至少有4个字符",
+    "nameMinLength": "用户名必须至少有6个字符",
     "nameMaxLength": "用户名不能超过50个字符",
     "passwordMinLength": "密码必须至少有6个字符",
     "passwordMaxLength": "密码不能超过20个字符",
@@ -41,8 +115,8 @@
     "passwordNumber": "密码必须包含数字",
     "passwordMismatch": "与密码不相同",
     "createAccount": "创建账户",
-    "accountCreationSuccessTitle": "账号已成功创建",
-    "accountCreationSuccessDescription": "您的 IT&TEA 账号已成功创建，并且已登录系统，您可以开始您的商业活动。",
+    "accountCreationSuccessTitle": "账户已创建",
+    "accountCreationSuccessDescription": "您的 IT&TEA 账户已准备好。开始您的业务活动吧。",
     "returnToHomepage": "返回首页"
   }
 }

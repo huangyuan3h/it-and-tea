@@ -1,8 +1,58 @@
 {
+  "common": {
+    "footer": {
+      "about": "About Us",
+      "contact": "Contact",
+      "privacyPolicy": "Privacy Policy"
+    }
+  },
   "HomePage": {
+    "meta": {
+      "title": "IT and Tea - Leading AI Solutions for Business Innovation",
+      "description": "IT and Tea is a cutting-edge AI company delivering innovative solutions to drive business growth and transformation. Our expertise spans artificial intelligence, data analysis, and automation, helping businesses thrive in the digital era. Explore how our AI-powered products and services can empower your future.",
+      "keywords": {
+        "ai_solutions": "AI solutions",
+        "business_innovation": "business innovation",
+        "artificial_intelligence": "artificial intelligence",
+        "data_analysis": "data analysis",
+        "automation": "automation",
+        "ai_powered_products": "AI-powered products",
+        "digital_transformation": "digital transformation",
+        "ai_company": "AI company",
+        "cutting_edge_technology": "cutting-edge technology",
+        "it_services": "IT services"
+      }
+    },
+    "tts": {
+      "cardTitle": "Welcome to IT and Tea's Advanced TTS Solution",
+      "cardDescription": "Experience our cutting-edge text-to-speech technology",
+      "labelText": "Enter your text:",
+      "textareaPlaceholder": "Type text for speech synthesis",
+      "textareaValue": "Welcome to IT and Tea's TTS platform! Experiment with different text inputs to hear how they affect the synthesized speech.",
+      "buttonText": "Synthesize Speech"
+    },
+    "hero": {
+      "title": "Welcome to IT&TEA",
+      "description": "IT&TEA provides advanced software and AI solutions",
+      "button": "Learn More"
+    },
+    "calloutAI": {
+      "title": "IT&TEA: Your AI Solution Architects",
+      "description": "We build and apply cutting-edge AI models, such as Natural Language Processing and Computer Vision, to craft powerful solutions that drive your business value."
+    },
     "welcome": "Welcome",
     "description": "This is an example description",
-    "speech": "Hello, welcome to IT and tea"
+    "speech": "Hello, welcome to IT and tea",
+    "slider": {
+      "northPathTitle": "North Path",
+      "northPathSubtitle": "Guide for Chinese Immigrants to Canada",
+      "northPathDescription": "North Path is designed for Chinese immigrants, offering comprehensive information on immigration, studying abroad, and living in Canada. ",
+      "northPathButton": "Visit North Path",
+      "kairosTitle": "Kairos",
+      "kairosSubtitle": "Stock Prediction System Using LSTM & Transformer",
+      "kairosDescription": "Kairos utilizes advanced machine learning models, including LSTM and Transformer, to analyze stock market trends and provide accurate predictions for better decision-making.",
+      "kairosButton": "Explore Kairos"
+    }
   },
   "Register": {
     "title": "Register",
@@ -15,6 +65,31 @@
     "login": "Login",
     "emailAlertTitle": "Email Sent Successfully",
     "emailAlertDescription": "A registration email has been sent to your mailbox. Please click the invitation link to continue!"
+  },
+  "Login": {
+    "title": "Login",
+    "description": "Login to IT&TEA",
+    "email": "Email",
+    "registerPlaceholder": "Enter your email",
+    "invalidEmail": "Email is not valid",
+    "passwordLabel": "Password",
+    "passwordPlaceholder": "Enter your Password",
+    "passwordMinLength": "Password must be at least 6 characters",
+    "passwordLowerCase": "Password must contain a lowercase letter",
+    "passwordUpperCase": "Password must contain an uppercase letter",
+    "passwordNumber": "Password must contain a number",
+    "invalidPassword": "Password is not valid",
+    "login": "Login",
+    "register": "Register an account",
+    "socialLabel": "Use your social account to login:",
+    "emailLabel": "Email",
+    "emailPlaceholder": "Enter your Email",
+    "emailInvalid": "Please enter a valid email address",
+    "loginErrorTitle": "Login Failed",
+    "loginErrorDescription": "The username or password you entered is incorrect. Please try again.",
+    "googleLoginErrorDescription": "google service is not available, please try again.",
+    "googleLoginLoading": "Logging in...",
+    "googleLoginSuccess": "Google login successful"
   },
   "CreateAccount": {
     "title": "Create an IT&TEA account",
@@ -31,7 +106,7 @@
     "confirmPasswordLabel": "Confirm Password",
     "confirmPasswordPlaceholder": "Re-enter your password",
     "emailInvalid": "Please enter a valid email address",
-    "nameMinLength": "Name must be at least 4 characters",
+    "nameMinLength": "Name must be at least 6 characters",
     "nameMaxLength": "Name cannot exceed 50 characters",
     "passwordMinLength": "Password must be at least 6 characters",
     "passwordMaxLength": "Password cannot exceed 20 characters",
@@ -40,8 +115,8 @@
     "passwordNumber": "Password must contain a number",
     "passwordMismatch": "Passwords do not match",
     "createAccount": "Create Account",
-    "accountCreationSuccessTitle": "Account Successfully Created",
-    "accountCreationSuccessDescription": "Your IT&TEA account has been successfully created and you are now logged in. You may begin your business activities.",
-    "returnToHomepage": "Return to Homepage"
+    "accountCreationSuccessTitle": "Account Created",
+    "accountCreationSuccessDescription": "Your IT&TEA account is ready. Start your activities now.",
+    "returnToHomepage": "Back to Home"
   }
 }

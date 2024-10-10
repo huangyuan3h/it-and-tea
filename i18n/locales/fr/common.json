@@ -1,8 +1,58 @@
 {
+  "common": {
+    "footer": {
+      "about": "À propos de nous",
+      "contact": "Contact",
+      "privacyPolicy": "Politique de confidentialité"
+    }
+  },
   "HomePage": {
+    "meta": {
+      "title": "IT and Tea - Solutions IA de pointe pour l'innovation commerciale",
+      "description": "IT and Tea est une entreprise innovante en intelligence artificielle offrant des solutions pour stimuler la croissance et la transformation des entreprises. Notre expertise couvre l'intelligence artificielle, l'analyse des données et l'automatisation, aidant les entreprises à prospérer à l'ère numérique. Découvrez comment nos produits et services alimentés par l'IA peuvent soutenir votre avenir.",
+      "keywords": {
+        "ai_solutions": "solutions IA",
+        "business_innovation": "innovation commerciale",
+        "artificial_intelligence": "intelligence artificielle",
+        "data_analysis": "analyse des données",
+        "automation": "automatisation",
+        "ai_powered_products": "produits alimentés par l'IA",
+        "digital_transformation": "transformation numérique",
+        "ai_company": "entreprise IA",
+        "cutting_edge_technology": "technologie de pointe",
+        "it_services": "services informatiques"
+      }
+    },
+    "tts": {
+      "cardTitle": "Bienvenue à la solution TTS avancée de IT and Tea",
+      "cardDescription": "Découvrez notre technologie de synthèse vocale de pointe",
+      "labelText": "Saisissez votre texte :",
+      "textareaPlaceholder": "Saisissez le texte pour la synthèse vocale",
+      "textareaValue": "Bienvenue sur la plateforme TTS de IT and Tea ! Expérimentez avec différentes entrées de texte pour entendre comment elles affectent la parole synthétisée.",
+      "buttonText": "Synthétiser la voix"
+    },
+    "hero": {
+      "title": "Bienvenue à IT&TEA",
+      "description": "IT&TEA fournit des solutions logicielles avancées ainsi que des solutions d’intelligence artificielle.",
+      "button": "En savoir plus"
+    },
+    "calloutAI": {
+      "title": "IT&TEA : Vos architectes de solutions IA",
+      "description": "Nous concevons et mettons en œuvre des modèles d’IA de pointe, tels que ceux de traitement du langage naturel et de vision par ordinateur, afin de créer des solutions puissantes qui augmentent la valeur de votre entreprise."
+    },
     "welcome": "fr",
     "description": "fr description",
-    "speech": "Bonjour, bienvenue chez IT and Tea."
+    "speech": "Bonjour, bienvenue chez IT and Tea.",
+    "slider": {
+      "northPathTitle": "North Path",
+      "northPathSubtitle": "Guide pour les nouveaux immigrants chinois au Canada",
+      "northPathDescription": "North Path est conçu pour les immigrants chinois, offrant des informations complètes sur l'immigration, les études à l'étranger et la vie au Canada.",
+      "northPathButton": "Visiter North Path",
+      "kairosTitle": "Kairos",
+      "kairosSubtitle": "Système de prédiction boursière utilisant LSTM et Transformer",
+      "kairosDescription": "Kairos utilise des modèles avancés d'apprentissage automatique, notamment LSTM et Transformer, pour analyser les tendances du marché boursier et fournir des prédictions précises pour une meilleure prise de décision.",
+      "kairosButton": "Explorer Kairos"
+    }
   },
   "Register": {
     "title": "S'inscrire",
@@ -15,6 +65,31 @@
     "login": "Connexion",
     "emailAlertTitle": "E-mail envoyé avec succès",
     "emailAlertDescription": "Un e-mail d'inscription a été envoyé à votre boîte de réception. Veuillez cliquer sur le lien d'invitation pour continuer !"
+  },
+  "Login": {
+    "title": "Connexion",
+    "description": "Connectez-vous à IT&TEA",
+    "email": "E-mail",
+    "registerPlaceholder": "Entrez votre e-mail",
+    "invalidEmail": "E-mail invalide",
+    "passwordLabel": "Mot de passe",
+    "passwordPlaceholder": "Entrez votre mot de passe",
+    "passwordMinLength": "Le mot de passe doit contenir au moins 6 caractères",
+    "passwordLowerCase": "Le mot de passe doit contenir une lettre minuscule",
+    "passwordUpperCase": "Le mot de passe doit contenir une lettre majuscule",
+    "passwordNumber": "Le mot de passe doit contenir un chiffre",
+    "invalidPassword": "Mot de passe invalide",
+    "login": "Connexion",
+    "register": "Créer un compte",
+    "socialLabel": "Utilisez votre compte social pour vous connecter :",
+    "emailLabel": "E-mail",
+    "emailPlaceholder": "Entrez votre e-mail",
+    "emailInvalid": "Veuillez entrer une adresse e-mail valide",
+    "loginErrorTitle": "Échec de la Connexion",
+    "loginErrorDescription": "Le nom d'utilisateur ou le mot de passe est incorrect. Veuillez réessayer.",
+    "googleLoginErrorDescription": "Le service Google n’est pas disponible, veuillez réessayer.",
+    "googleLoginLoading": "Connexion en cours...",
+    "googleLoginSuccess": "Connexion Google réussie."
   },
   "CreateAccount": {
     "title": "Créez un compte IT&TEA",
@@ -31,7 +106,7 @@
     "confirmPasswordLabel": "Confirmer le mot de passe",
     "confirmPasswordPlaceholder": "Entrez à nouveau votre mot de passe",
     "emailInvalid": "Veuillez entrer une adresse e-mail valide",
-    "nameMinLength": "Le nom doit comporter au moins 4 caractères",
+    "nameMinLength": "Le nom doit comporter au moins 6 caractères",
     "nameMaxLength": "Le nom ne peut pas dépasser 50 caractères",
     "passwordMinLength": "Le mot de passe doit comporter au moins 6 caractères",
     "passwordMaxLength": "Le mot de passe ne peut pas dépasser 20 caractères",
@@ -40,8 +115,8 @@
     "passwordNumber": "Le mot de passe doit contenir un chiffre",
     "passwordMismatch": "Les mots de passe ne correspondent pas",
     "createAccount": "Créer un compte",
-    "accountCreationSuccessTitle": "Compte créé avec succès",
-    "accountCreationSuccessDescription": "Votre compte IT&TEA a été créé avec succès et vous êtes maintenant connecté. Vous pouvez commencer vos activités commerciales.",
-    "returnToHomepage": "Retour à la page d'accueil"
+    "accountCreationSuccessTitle": "Compte Créé",
+    "accountCreationSuccessDescription": "Votre compte IT&TEA est prêt. Commencez vos activités.",
+    "returnToHomepage": "Retour à l'accueil"
   }
 }
