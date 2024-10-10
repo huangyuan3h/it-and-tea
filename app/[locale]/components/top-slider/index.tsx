@@ -11,9 +11,11 @@ import { type CarouselApi } from "@/components/ui/carousel";
 import { useEffect, useState } from "react";
 
 import { SliderItem } from "./slider-item";
-import { Button } from "@/components/ui/button";
+import { Button, LinkButton } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 import { useTranslations } from "next-intl";
+import Link from "next/link";
+import { cn } from "@/lib/utils";
 
 const sliderData = {
   items: [
@@ -114,15 +116,13 @@ export const TopSlider: React.FC<{}> = () => {
                       {t(item.description)}
                     </p>
                     {item.buttonText && item.buttonAction && (
-                      <Button
-                        variant={"secondary"}
+                      <LinkButton
                         className="mt-4"
-                        onClick={() =>
-                          handleButtonClick(item.buttonAction, item.buttonUrl)
-                        }
+                        variant={"secondary"}
+                        href={item.buttonUrl}
                       >
                         {t(item.buttonText)}
-                      </Button>
+                      </LinkButton>
                     )}
                   </div>
                 </div>
