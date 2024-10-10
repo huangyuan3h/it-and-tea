@@ -43,9 +43,16 @@
     "welcome": "fr",
     "description": "fr description",
     "speech": "Bonjour, bienvenue chez IT and Tea.",
-    "northPathTitle": "North Path",
-    "northPathSubtitle": "Guide pour les nouveaux immigrants chinois au Canada",
-    "northPathDescription": "North Path est conçu pour les immigrants chinois, offrant des informations complètes sur l'immigration, les études à l'étranger et la vie au Canada. Nous couvrons des sujets pratiques tels que les demandes de visa, le logement et l'emploi, tout en fournissant les dernières actualités et divertissements pour vous aider à vous intégrer facilement à la vie canadienne."
+    "slider": {
+      "northPathTitle": "North Path",
+      "northPathSubtitle": "Guide pour les nouveaux immigrants chinois au Canada",
+      "northPathDescription": "North Path est conçu pour les immigrants chinois, offrant des informations complètes sur l'immigration, les études à l'étranger et la vie au Canada.",
+      "northPathButton": "Visiter North Path",
+      "kairosTitle": "Kairos",
+      "kairosSubtitle": "Système de prédiction boursière utilisant LSTM et Transformer",
+      "kairosDescription": "Kairos utilise des modèles avancés d'apprentissage automatique, notamment LSTM et Transformer, pour analyser les tendances du marché boursier et fournir des prédictions précises pour une meilleure prise de décision.",
+      "kairosButton": "Explorer Kairos"
+    }
   },
   "Register": {
     "title": "S'inscrire",

@@ -43,9 +43,16 @@
     "welcome": "zh",
     "description": "zh description",
     "speech": "你好！ 欢迎来到 IT and tea",
-    "northPathTitle": "North Path",
-    "northPathSubtitle": "加拿大华人新移民指南",
-    "northPathDescription": "North Path专为中国新移民打造，提供全面的加拿大移民、留学资讯及生活指南。我们涵盖签证申请、住房、就业等实用信息，同时还提供最新的加拿大新闻、娱乐动态，帮助您顺利融入加拿大生活。"
+    "slider": {
+      "northPathTitle": "North Path",
+      "northPathSubtitle": "加拿大华人新移民指南",
+      "northPathDescription": "North Path专为中国新移民打造，提供全面的加拿大移民、留学资讯及生活指南。",
+      "northPathButton": "访问 North Path",
+      "kairosTitle": "Kairos",
+      "kairosSubtitle": "使用LSTM和Transformer的股票预测系统",
+      "kairosDescription": "时机利用先进的机器学习模型，包括LSTM和Transformer，分析股市趋势，提供准确的预测，帮助做出更好的决策。",
+      "kairosButton": "探索时机"
+    }
   },
   "Register": {
     "title": "注册",

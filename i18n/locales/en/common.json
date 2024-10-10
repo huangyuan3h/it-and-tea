@@ -43,9 +43,16 @@
     "welcome": "Welcome",
     "description": "This is an example description",
     "speech": "Hello, welcome to IT and tea",
-    "northPathTitle": "North Path",
-    "northPathSubtitle": "Guide for Chinese Immigrants to Canada",
-    "northPathDescription": "North Path is designed for Chinese immigrants, offering comprehensive information on immigration, studying abroad, and living in Canada. We cover practical topics such as visa applications, housing, and employment, while also providing the latest news and entertainment updates to help you integrate smoothly into Canadian life."
+    "slider": {
+      "northPathTitle": "North Path",
+      "northPathSubtitle": "Guide for Chinese Immigrants to Canada",
+      "northPathDescription": "North Path is designed for Chinese immigrants, offering comprehensive information on immigration, studying abroad, and living in Canada. ",
+      "northPathButton": "Visit North Path",
+      "kairosTitle": "Kairos",
+      "kairosSubtitle": "Stock Prediction System Using LSTM & Transformer",
+      "kairosDescription": "Kairos utilizes advanced machine learning models, including LSTM and Transformer, to analyze stock market trends and provide accurate predictions for better decision-making.",
+      "kairosButton": "Explore Kairos"
+    }
   },
   "Register": {
     "title": "Register",

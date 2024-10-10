@@ -15,6 +15,51 @@ import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 import { useTranslations } from "next-intl";
 
+const sliderData = {
+  items: [
+    {
+      src: "/images/north-path.jpg",
+      alt: "north path",
+      title: "slider.northPathTitle",
+      subtitle: "slider.northPathSubtitle",
+      description: "slider.northPathDescription",
+      buttonText: "slider.northPathButton",
+      buttonAction: "navigate",
+      buttonUrl: "https://north-path.it-t.xyz/",
+    },
+    {
+      src: "/images/kairos.jpg",
+      alt: "kairos",
+      title: "slider.kairosTitle",
+      subtitle: "slider.kairosSubtitle",
+      description: "slider.kairosDescription",
+      buttonText: "slider.kairosButton",
+      buttonAction: "navigate",
+      buttonUrl: "https://kairos.it-t.xyz/predict-report",
+    },
+    // {
+    //   src: "/images/store.jpg",
+    //   alt: "store",
+    //   title: "slider.storeTitle",
+    //   subtitle: "slider.storeSubtitle",
+    //   description: "slider.storeDescription",
+    //   buttonText: "slider.storeButton",
+    //   buttonAction: "navigate",
+    //   buttonUrl: "https://store.it-t.xyz/",
+    // },
+    // {
+    //   src: "/images/components.jpg",
+    //   alt: "components",
+    //   title: "slider.componentsTitle",
+    //   subtitle: "slider.componentsSubtitle",
+    //   description: "slider.componentsDescription",
+    //   buttonText: "slider.componentsButton",
+    //   buttonAction: "navigate",
+    //   buttonUrl: "https://components.it-t.xyz/",
+    // },
+  ],
+};
+
 export const TopSlider: React.FC<{}> = () => {
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
@@ -23,9 +68,7 @@ export const TopSlider: React.FC<{}> = () => {
   const t = useTranslations("HomePage");
 
   useEffect(() => {
-    if (!api) {
-      return;
-    }
+    if (!api) return;
 
     setCount(api.scrollSnapList().length);
     setCurrent(api.selectedScrollSnap() + 1);
@@ -35,12 +78,10 @@ export const TopSlider: React.FC<{}> = () => {
     });
   }, [api]);
 
-  const handleClickVisitNorthPath = () => {
-    router.push("https://north-path.it-t.xyz/");
-  };
-
-  const handleClickVisitKairos = () => {
-    router.push("https://kairos.it-t.xyz/predict-report");
+  const handleButtonClick = (action: string, url?: string) => {
+    if (action === "navigate" && url) {
+      router.push(url);
+    }
   };
 
   return (
@@ -57,47 +98,38 @@ export const TopSlider: React.FC<{}> = () => {
       ]}
     >
       <CarouselContent>
-        <CarouselItem>
-          <SliderItem src="/images/north-path.jpg" alt="north path">
-            <div className="absolute top-20 text-white left-24 w-80">
-              <h2 className="text-6xl">{t("northPathTitle")}</h2>
-              <h3 className="text-2xl mt-2">{t("northPathSubtitle")}</h3>
-              <p className="text-xl mt-2">{t("northPathDescription")}</p>
-              <Button
-                variant={"secondary"}
-                className="mt-4"
-                onClick={handleClickVisitNorthPath}
-              >
-                Visit North Path
-              </Button>
-            </div>
-          </SliderItem>
-        </CarouselItem>
-        <CarouselItem>
-          <SliderItem src="/images/kairos.jpg" alt="kairos">
-            <div className="absolute top-40 text-white left-24 w-80">
-              <h2 className="text-6xl">KAIROS</h2>
-              <h3 className="text-2xl mt-2">加拿大华人新移民指南</h3>
-              <p className="text-xl mt-2">
-                North Path
-                专为中国新移民打造，提供全面的加拿大移民、留学资讯及生活指南。我们涵盖签证申请、住房、就业等实用信息，同时还提供最新的加拿大新闻、娱乐动态，帮助您顺利融入加拿大生活。
-              </p>
-              <Button
-                variant={"secondary"}
-                className="mt-4"
-                onClick={handleClickVisitKairos}
-              >
-                Visit Kairos
-              </Button>
-            </div>
-          </SliderItem>
-        </CarouselItem>
-        <CarouselItem>
-          <SliderItem src="/images/store.jpg" alt="store" />
-        </CarouselItem>
-        <CarouselItem>
-          <SliderItem src="/images/components.jpg" alt="components" />
-        </CarouselItem>
+        {sliderData.items.map((item, index) => (
+          <CarouselItem key={index}>
+            <SliderItem src={item.src} alt={item.alt}>
+              {item.title && (
+                <div className="absolute top-0 bottom-0 left-0 right-0 flex justify-start items-center h-full">
+                  <div className="text-white px-24">
+                    <h2 className="text-4xl md:text-5xl lg:text-6xl">
+                      {t(item.title)}
+                    </h2>
+                    <h3 className="text-xl md:text-2xl lg:text-3xl mt-2">
+                      {t(item.subtitle)}
+                    </h3>
+                    <p className="text-lg md:text-xl lg:text-2xl mt-2">
+                      {t(item.description)}
+                    </p>
+                    {item.buttonText && item.buttonAction && (
+                      <Button
+                        variant={"secondary"}
+                        className="mt-4"
+                        onClick={() =>
+                          handleButtonClick(item.buttonAction, item.buttonUrl)
+                        }
+                      >
+                        {t(item.buttonText)}
+                      </Button>
+                    )}
+                  </div>
+                </div>
+              )}
+            </SliderItem>
+          </CarouselItem>
+        ))}
       </CarouselContent>
       <CarouselPrevious variant={"secondary"} />
       <CarouselNext variant={"secondary"} />
