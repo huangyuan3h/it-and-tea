@@ -31,7 +31,10 @@ const LanguageSelector: React.FC = () => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <div className="text-sm font-medium leading-none self-center cursor-pointer">
+        <div
+          className="text-sm font-medium leading-none self-center cursor-pointer"
+          role="button"
+        >
           {languageMapping[locale as LanguageKey]}
         </div>
       </DropdownMenuTrigger>
