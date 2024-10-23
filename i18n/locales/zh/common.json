@@ -121,5 +121,16 @@
     "accountCreationSuccessTitle": "账户已创建",
     "accountCreationSuccessDescription": "您的 IT&TEA 账户已准备好。开始您的业务活动吧。",
     "returnToHomepage": "返回首页"
+  },
+  "about": {
+    "aboutTitle": "关于 IT and Tea",
+    "aboutDescription": "IT and Tea 专注于提供先进的AI解决方案，助力企业实现智能化转型与创新。",
+    "storyTitle": "我们的故事",
+    "storyDescription": "IT and Tea 由对AI技术充满热情的全栈开发者创立。我们希望通过技术创新，推动企业在智能时代的发展，共同创造更具潜力的未来。",
+    "missionTitle": "我们的使命",
+    "missionDescription": "IT and Tea 致力于通过先进的AI技术，为企业提供智能化、创新性的解决方案，帮助客户在不断变化的市场中获得竞争优势。",
+    "teamTitle": "我们的团队",
+    "fullstackDeveloper": "全栈开发者",
+    "yuanBio": "他是一位经验丰富的全栈软件工程师，拥有10年的行业经验，对技术充满热情。他精通Next.js和TypeScript等现代技术栈，并利用其专业知识主导开发了本站的大部分功能。他坚信技术的力量可以改善人们的生活，并致力于利用自己的技能和经验为用户创造一个便捷、高效、可靠的在线平台。"
   }
 }

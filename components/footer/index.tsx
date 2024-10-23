@@ -19,7 +19,7 @@ const Footer: React.FC = () => {
             {t("footer.about")}
           </Link>
           <Link
-            href="/contact"
+            href="https://north-path.it-t.xyz/contact"
             className="font-medium text-gray-700 hover:text-gray-900 transition duration-300"
           >
             {t("footer.contact")}

@@ -121,5 +121,16 @@
     "accountCreationSuccessTitle": "Compte Créé",
     "accountCreationSuccessDescription": "Votre compte IT&TEA est prêt. Commencez vos activités.",
     "returnToHomepage": "Retour à l'accueil"
+  },
+  "about": {
+    "aboutTitle": "À propos de IT and Tea",
+    "aboutDescription": "IT and Tea se spécialise dans la fourniture de solutions d'IA avancées pour aider les entreprises à réaliser une transformation intelligente et à innover.",
+    "storyTitle": "Notre histoire",
+    "storyDescription": "Fondée par un développeur fullstack passionné, IT and Tea vise à promouvoir la croissance des entreprises à l'ère de l'IA par l'innovation technologique, en construisant ensemble un avenir plus prometteur.",
+    "missionTitle": "Notre mission",
+    "missionDescription": "IT and Tea s'engage à fournir des solutions d'IA intelligentes et innovantes pour aider les entreprises à obtenir un avantage concurrentiel dans un marché en constante évolution.",
+    "teamTitle": "Notre équipe",
+    "fullstackDeveloper": "Développeur Fullstack",
+    "yuanBio": "C'est un ingénieur logiciel fullstack expérimenté avec 10 ans d'expérience dans le secteur et une passion pour la technologie. Maîtrisant les technologies modernes comme Next.js et TypeScript, il a dirigé le développement de la plupart des fonctionnalités de ce site. Il croit au pouvoir de la technologie pour améliorer la vie des gens et se consacre à utiliser ses compétences et son expérience pour créer une plateforme en ligne pratique, efficace et fiable pour les utilisateurs."
   }
 }
